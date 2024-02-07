@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="icon" href="./assets/nova.png">
+    <link rel="stylesheet" href="fbla.css">
+</head>
+<body>
+    <nav>
+        <img src="./assets/menu.png" alt="menu" id="menu">
+        <a href="index.html" id="company-name">NovaTech Solutions</a>
+        <a href="index.html" class="nav-option">Home</a>
+        <a href="job-list.html" class="nav-option">Jobs</a>
+        <a href="about.html" class="nav-option">About Us</a>
+        <a href="log-in.html" class="nav-option log-in-tab">Log In</a>
+    </nav>
+
+    <div id="menu-content">
+        <h1>Pages:</h1>
+        <a href="index.html" class="nav-option">Home</a>
+        <a href="job-list.html" class="nav-option">Jobs</a>
+        <a href="about.html" class="nav-option">About Us</a>
+        <a href="log-in.html" class="nav-option log-in-tab">Log In</a>
+    </div>
+
+    <div id="page-wrapper">
+        <div id="log-in-header">
+            <!-- <h1>NovaTech Solutions</h1> -->
+            <h1 id="account-form-subheader">Log Into Your Account</h1>
+        </div>
+        <form id="log-in">
+            <div class="input-wrapper">
+                <p class="account-label">Username</p>
+                <input id="login-user-input" class="account-input" type="text" placeholder="Enter Username" maxlength="20" title="enter name">
+            </div>
+            <div class="input-wrapper">
+                <p class="account-label">Password</p>
+                <input id="login-pass-input" class="account-input" type="password" placeholder="Enter Password" maxLength="20" title="enter password">
+                <input title="show-password" type="checkbox" onclick="showLoginPassword()"><span>Show Password</span>
+            </div>
+            <p id="password-checker"></p>
+            <button id="login-button" class="account-submit" type="button" onclick="logIn()">
+                <!-- <a href="index.html">Log In</a> -->
+                Log In
+            </button>
+            <br>
+            <button id="switch-sign-up" class="account-page-switch" type="button" onclick="switchToSignUp()">Create Account</button>
+        </form>
+    
+        <form id="sign-up">
+            <div class="input-wrapper">
+                <p class="account-label">Username</p>
+                <input id="signup-user-input" class="account-input" type="text" placeholder="Enter Username" maxlength="20" title="enter name">
+            </div>
+            <div class="input-wrapper">
+                <p class="account-label">Password</p>
+                <input id="signup-pass-input" name="signup-pass-input" class="account-input" type="password" placeholder="Enter Password" maxLength="20" title="enter password" required>
+                <input title="show-password" type="checkbox" onclick="showSignupPassword()"><span>Show Password</span>
+            </div>
+            <div id="pass-requirements">
+                <h3 id="pass-requirements-header">Password must contain:</h3>
+                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                <p id="number" class="invalid">A <b>number</b></p>
+                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>
+            <p id="account-noti"></p>
+            <button id="signUp-button" class="account-submit" type="button" onclick="createAccount()">Sign Up</button>
+            <br>
+            <button id="switch-log-in" class="account-page-switch" type="button" onclick="switchToLogIn()">Log In</button>
+        </form>
+    </div>
+
+    <script src="fbla.js"></script>
+</body>
+</html>

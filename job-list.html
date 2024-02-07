@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Openings</title>
+    <link rel="icon" href="./assets/nova.png">
+    <link rel="stylesheet" href="fbla.css">
+</head>
+<body>
+    <div id="job-list-wrapper">
+        <nav>
+            <img src="./assets/menu.png" alt="menu" id="menu">
+            <a href="index.html" id="company-name">NovaTech Solutions</a>
+            <a href="index.html" class="nav-option">Home</a>
+            <a href="job-list.html" class="nav-option">Jobs</a>
+            <a href="about.html" class="nav-option">About Us</a>
+            <a href="log-in.html" class="nav-option log-in-tab">Log In</a>
+        </nav>
+
+        <div id="menu-content">
+            <h1>Pages:</h1>
+            <a href="index.html" class="nav-option">Home</a>
+            <a href="job-list.html" class="nav-option">Jobs</a>
+            <a href="about.html" class="nav-option">About Us</a>
+            <a href="log-in.html" class="nav-option log-in-tab">Log In</a>
+        </div>
+
+        <div id="page-wrapper">
+            <h1 id="job-list-title">Jobs:</h1>
+            <!-- <input title="job-search" type="text" id="job-search" placeholder="Search for jobs"> -->
+            <div id="job-list-container">
+                <div class="job-list-column">
+                    <div id="job-openings">
+
+                    </div>
+                </div>
+                <div id="job-list-column-2" class="job-list-column">
+                    <div class="job-apply" id="job-apply-1">
+                        <h1>Software Engineer</h1>
+                        <p>6997 N Glen Harbor Blvd</p>
+                        <p>$90,000 - $130,000 per year</p>
+                        <button onclick="apply('job1')" type="button" class="apply">Apply</button>
+                    </div>
+                    <div class="job-apply" id="job-apply-2">
+                        <h1>Hardware Innovation Specialist</h1>
+                        <p>6997 N Glen Harbor Blvd</p>
+                        <p>$85,000 - $120,000 per year</p>
+                        <button onclick="apply('job2')" type="button" class="apply">Apply</button>
+                    </div>
+                    <div class="job-apply" id="job-apply-3">
+                        <h1>Technology Solutions Consultant</h1>
+                        <p>6997 N Glen Harbor Blvd</p>
+                        <p>$80,000 - $110,000 per year</p>
+                        <button onclick="apply('job3')" type="button" class="apply">Apply</button>
+                    </div>
+                    <div class="job-info">
+                        <div class="job-container-info" id="job-info-1">
+                            <h2>Job Details</h2>
+                            <p>Pay: <br>
+                                $90,000 - $130,000 per year</p>
+                            <p>Job Type: <br>
+                                Full-time</p>
+
+                            <p>
+                                Job Requirements: <br>
+                                <ul>
+                                    <li>
+                                        Proven experience in developing cutting-edge algorithms and advanced software solutions.
+                                    </li>
+                                    <li>
+                                        Proficiency in programming languages such as C++, Java, Python, etc.
+                                    </li>
+                                    <li>
+                                        Strong analytical and problem-solving skills.
+                                    </li>
+                                    <li>
+                                        Knowledge of machine learning and artificial intelligence is a plus.
+                                    </li>
+                                    <li>
+                                        Ability to work collaboratively in a team environment.
+                                    </li>
+                                    <li>
+                                        Passion for innovation and staying up-to-date with the latest advancements in software engineering.
+                                    </li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                Responsibilities and Duties: <br>
+                                <ul>
+                                    <li>
+                                        Research, design, and implement complex algorithms to solve challenging problems.
+                                    </li>
+                                    <li>
+                                        Collaborate with cross-functional teams to develop and integrate advanced software solutions.
+                                    </li>
+                                    <li>
+                                        Conduct code reviews and provide constructive feedback to team members.
+                                    </li>
+                                    <li>
+                                        Optimize software performance and ensure scalability.
+                                    </li>
+                                    <li>
+                                        Stay informed about industry trends and emerging technologies.
+                                    </li>
+                                    <li>
+                                        Contribute to the development of technical documentation.
+                                    </li>
+                                    <li>
+                                        Participate in brainstorming sessions to generate innovative ideas.
+                                    </li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                Benefits:
+                                <ul>
+                                    <li>
+                                        401(k)
+                                    </li>
+                                    <li>
+                                        401(k) matching
+                                    </li>
+                                    <li>
+                                        Dental insurance
+                                    </li>
+                                    <li>
+                                        Employee assistance program
+                                    </li>
+                                    <li>
+                                        Health insurance
+                                    </li>
+                                    <li>
+                                        Health savings account
+                                    </li>
+                                    <li>
+                                        Life insurance
+                                    </li>
+                                    <li>
+                                        Professional development assistance
+                                    </li>
+                                    <li>
+                                        Referral program
+                                    </li>
+                                    <li>
+                                        Retirement plan
+                                    </li>
+                                    <li>
+                                        Vision insurance
+                                    </li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                Work Location: <br>
+                                In person
+                            </p>
+
+                        </div>
+                        <div class="job-container-info" id="job-info-2">
+                            <h2>Job Details</h2>
+                            <p>Pay: <br>
+                                $85,000 - $120,000 per year</p>
+
+                            <p>Job Type: <br>
+                                Full-time</p>
+
+                                <p>
+                                    Job Requirements: <br>
+                                    <ul>
+                                        <li>
+                                            Proven experience in designing and optimizing hardware components.
+                                        </li>
+                                        <li>
+                                            Knowledge of hardware programming languages and tools.
+                                        </li>
+                                        <li>
+                                            Familiarity with emerging technologies in the hardware domain.
+                                        </li>
+                                        <li>
+                                            Strong problem-solving and troubleshooting skills.
+                                        </li>
+                                        <li>
+                                            Ability to collaborate with cross-functional teams.
+                                        </li>
+                                        <li>
+                                            Passion for pushing the boundaries of technology through hardware innovation.
+                                        </li>
+                                    </ul>
+                                </p>
+    
+                                <p>
+                                    Responsibilities and Duties: <br>
+                                    <ul>
+                                        <li>
+                                            Research, design, and innovate hardware components for computing advancements.
+                                        </li>
+                                        <li>
+                                            Collaborate with hardware engineers and software developers to ensure seamless integration.
+                                        </li>
+                                        <li>
+                                            Optimize and troubleshoot hardware solutions for performance and efficiency.
+                                        </li>
+                                        <li>
+                                            Stay updated on industry trends and technological advancements in hardware.
+                                        </li>
+                                        <li>
+                                            Conduct testing and validation of hardware prototypes.
+                                        </li>
+                                        <li>
+                                            Contribute to the documentation of hardware design specifications.
+                                        </li>
+                                        <li>
+                                            Provide technical support to other teams and departments.
+                                        </li>
+                                    </ul>
+                                </p>
+
+                            <p>
+                                Benefits:
+                                <ul>
+                                    <li>
+                                        401(k)
+                                    </li>
+                                    <li>
+                                        401(k) matching
+                                    </li>
+                                    <li>
+                                        Dental insurance
+                                    </li>
+                                    <li>
+                                        Employee assistance program
+                                    </li>
+                                    <li>
+                                        Health insurance
+                                    </li>
+                                    <li>
+                                        Health savings account
+                                    </li>
+                                    <li>
+                                        Life insurance
+                                    </li>
+                                    <li>
+                                        Professional development assistance
+                                    </li>
+                                    <li>
+                                        Referral program
+                                    </li>
+                                    <li>
+                                        Retirement plan
+                                    </li>
+                                    <li>
+                                        Vision insurance
+                                    </li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                Work Location: <br>
+                                In person
+                            </p>
+
+                        </div>
+                        <div class="job-container-info" id="job-info-3">
+                            <h2>Job Details</h2>
+                            <p>Pay: <br>
+                                $80,000 - $110,000 per year</p>
+                            <p>Job Type: <br>
+                                Full-time</p>
+                                <p>
+                                    Job Requirements: <br>
+                                    <ul>
+                                        <li>
+                                            Proven experience as a technology consultant or in a similar role.
+                                        </li>
+                                        <li>
+                                            Strong communication and interpersonal skills.
+                                        </li>
+                                        <li>
+                                            Strategic thinking with the ability to align technology solutions with business goals.
+                                        </li>
+                                        <li>
+                                            Understanding of advanced technologies and their applications in different industries.
+                                        </li>
+                                        <li>
+                                            Problem-solving and analytical skills.
+                                        </li>
+                                        <li>
+                                            Project management skills are a plus.
+                                        </li>
+                                    </ul>
+                                </p>
+    
+                                <p>
+                                    Responsibilities and Duties: <br>
+                                    <ul>
+                                        <li>
+                                            Collaborate with clients to understand their business needs and challenges.
+                                        </li>
+                                        <li>
+                                            Assess and analyze existing technologies to recommend improvements.
+                                        </li>
+                                        <li>
+                                            Develop technology solutions that align with clients' business objectives.
+                                        </li>
+                                        <li>
+                                            Communicate complex technological concepts to non-technical stakeholders.
+                                        </li>
+                                        <li>
+                                            Provide training and support during the implementation of technology solutions.
+                                        </li>
+                                        <li>
+                                            Stay informed about industry trends and technological advancements.
+                                        </li>
+                                        <li>
+                                            Contribute to the development of proposals and presentations for clients.
+                                        </li>
+                                    </ul>
+                                </p>
+
+                                <p>
+                                    Benefits:
+                                    <ul>
+                                        <li>
+                                            401(k)
+                                        </li>
+                                        <li>
+                                            401(k) matching
+                                        </li>
+                                        <li>
+                                            Dental insurance
+                                        </li>
+                                        <li>
+                                            Employee assistance program
+                                        </li>
+                                        <li>
+                                            Health insurance
+                                        </li>
+                                        <li>
+                                            Health savings account
+                                        </li>
+                                        <li>
+                                            Life insurance
+                                        </li>
+                                        <li>
+                                            Professional development assistance
+                                        </li>
+                                        <li>
+                                            Referral program
+                                        </li>
+                                        <li>
+                                            Retirement plan
+                                        </li>
+                                        <li>
+                                            Vision insurance
+                                        </li>
+                                    </ul>
+                                </p>
+    
+                                <p>
+                                    Work Location: <br>
+                                    In person
+                                </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="phone-query-job-list">
+                <div class="job-apply-phone">
+                    <h1>Software Engineer</h1>
+                    <p>6997 N Glen Harbor Blvd</p>
+                    <p>$90,000 - $130,000 per year</p>
+                    <button onclick="apply('job1')" type="button" class="apply">Apply</button>
+                    <p>Job Type: <br>
+                        Full-time</p>
+        
+                    <p>
+                        Job Requirements: <br>
+                        <ul>
+                            <li>
+                                Proven experience in developing cutting-edge algorithms and advanced software solutions.
+                            </li>
+                            <li>
+                                Proficiency in programming languages such as C++, Java, Python, etc.
+                            </li>
+                            <li>
+                                Strong analytical and problem-solving skills.
+                            </li>
+                            <li>
+                                Knowledge of machine learning and artificial intelligence is a plus.
+                            </li>
+                            <li>
+                                Ability to work collaboratively in a team environment.
+                            </li>
+                            <li>
+                                Passion for innovation and staying up-to-date with the latest advancements in software engineering.
+                            </li>
+                        </ul>
+                    </p>
+        
+                    <p>
+                        Responsibilities and Duties: <br>
+                        <ul>
+                            <li>
+                                Research, design, and implement complex algorithms to solve challenging problems.
+                            </li>
+                            <li>
+                                Collaborate with cross-functional teams to develop and integrate advanced software solutions.
+                            </li>
+                            <li>
+                                Conduct code reviews and provide constructive feedback to team members.
+                            </li>
+                            <li>
+                                Optimize software performance and ensure scalability.
+                            </li>
+                            <li>
+                                Stay informed about industry trends and emerging technologies.
+                            </li>
+                            <li>
+                                Contribute to the development of technical documentation.
+                            </li>
+                            <li>
+                                Participate in brainstorming sessions to generate innovative ideas.
+                            </li>
+                        </ul>
+                    </p>
+        
+                    <p>
+                        Benefits:
+                        <ul>
+                            <li>
+                                401(k)
+                            </li>
+                            <li>
+                                401(k) matching
+                            </li>
+                            <li>
+                                Dental insurance
+                            </li>
+                            <li>
+                                Employee assistance program
+                            </li>
+                            <li>
+                                Health insurance
+                            </li>
+                            <li>
+                                Health savings account
+                            </li>
+                            <li>
+                                Life insurance
+                            </li>
+                            <li>
+                                Professional development assistance
+                            </li>
+                            <li>
+                                Referral program
+                            </li>
+                            <li>
+                                Retirement plan
+                            </li>
+                            <li>
+                                Vision insurance
+                            </li>
+                        </ul>
+                    </p>
+        
+                    <p>
+                        Work Location: <br>
+                        In person
+                    </p>
+                </div>
+                <div class="job-apply-phone">
+                    <h1>Hardware Innovation Specialist</h1>
+                    <p>6997 N Glen Harbor Blvd</p>
+                    <p>$85,000 - $120,000 per year</p>
+                    <button onclick="apply('job2')" type="button" class="apply">Apply</button>
+                    <p>Job Type: <br>
+                        Full-time</p>
+        
+                        <p>
+                            Job Requirements: <br>
+                            <ul>
+                                <li>
+                                    Proven experience in designing and optimizing hardware components.
+                                </li>
+                                <li>
+                                    Knowledge of hardware programming languages and tools.
+                                </li>
+                                <li>
+                                    Familiarity with emerging technologies in the hardware domain.
+                                </li>
+                                <li>
+                                    Strong problem-solving and troubleshooting skills.
+                                </li>
+                                <li>
+                                    Ability to collaborate with cross-functional teams.
+                                </li>
+                                <li>
+                                    Passion for pushing the boundaries of technology through hardware innovation.
+                                </li>
+                            </ul>
+                        </p>
+        
+                        <p>
+                            Responsibilities and Duties: <br>
+                            <ul>
+                                <li>
+                                    Research, design, and innovate hardware components for computing advancements.
+                                </li>
+                                <li>
+                                    Collaborate with hardware engineers and software developers to ensure seamless integration.
+                                </li>
+                                <li>
+                                    Optimize and troubleshoot hardware solutions for performance and efficiency.
+                                </li>
+                                <li>
+                                    Stay updated on industry trends and technological advancements in hardware.
+                                </li>
+                                <li>
+                                    Conduct testing and validation of hardware prototypes.
+                                </li>
+                                <li>
+                                    Contribute to the documentation of hardware design specifications.
+                                </li>
+                                <li>
+                                    Provide technical support to other teams and departments.
+                                </li>
+                            </ul>
+                        </p>
+        
+                    <p>
+                        Benefits:
+                        <ul>
+                            <li>
+                                401(k)
+                            </li>
+                            <li>
+                                401(k) matching
+                            </li>
+                            <li>
+                                Dental insurance
+                            </li>
+                            <li>
+                                Employee assistance program
+                            </li>
+                            <li>
+                                Health insurance
+                            </li>
+                            <li>
+                                Health savings account
+                            </li>
+                            <li>
+                                Life insurance
+                            </li>
+                            <li>
+                                Professional development assistance
+                            </li>
+                            <li>
+                                Referral program
+                            </li>
+                            <li>
+                                Retirement plan
+                            </li>
+                            <li>
+                                Vision insurance
+                            </li>
+                        </ul>
+                    </p>
+        
+                    <p>
+                        Work Location: <br>
+                        In person
+                    </p>
+                </div>
+                <div class="job-apply-phone">
+                    <h1>Technology Solutions Consultant</h1>
+                    <p>6997 N Glen Harbor Blvd</p>
+                    <p>$80,000 - $110,000 per year</p>
+                    <button onclick="apply('job3')" type="button" class="apply">Apply</button>
+                    <p>Job Type: <br>
+                        Full-time</p>
+                        <p>
+                            Job Requirements: <br>
+                            <ul>
+                                <li>
+                                    Proven experience as a technology consultant or in a similar role.
+                                </li>
+                                <li>
+                                    Strong communication and interpersonal skills.
+                                </li>
+                                <li>
+                                    Strategic thinking with the ability to align technology solutions with business goals.
+                                </li>
+                                <li>
+                                    Understanding of advanced technologies and their applications in different industries.
+                                </li>
+                                <li>
+                                    Problem-solving and analytical skills.
+                                </li>
+                                <li>
+                                    Project management skills are a plus.
+                                </li>
+                            </ul>
+                        </p>
+        
+                        <p>
+                            Responsibilities and Duties: <br>
+                            <ul>
+                                <li>
+                                    Collaborate with clients to understand their business needs and challenges.
+                                </li>
+                                <li>
+                                    Assess and analyze existing technologies to recommend improvements.
+                                </li>
+                                <li>
+                                    Develop technology solutions that align with clients' business objectives.
+                                </li>
+                                <li>
+                                    Communicate complex technological concepts to non-technical stakeholders.
+                                </li>
+                                <li>
+                                    Provide training and support during the implementation of technology solutions.
+                                </li>
+                                <li>
+                                    Stay informed about industry trends and technological advancements.
+                                </li>
+                                <li>
+                                    Contribute to the development of proposals and presentations for clients.
+                                </li>
+                            </ul>
+                        </p>
+        
+                        <p>
+                            Benefits:
+                            <ul>
+                                <li>
+                                    401(k)
+                                </li>
+                                <li>
+                                    401(k) matching
+                                </li>
+                                <li>
+                                    Dental insurance
+                                </li>
+                                <li>
+                                    Employee assistance program
+                                </li>
+                                <li>
+                                    Health insurance
+                                </li>
+                                <li>
+                                    Health savings account
+                                </li>
+                                <li>
+                                    Life insurance
+                                </li>
+                                <li>
+                                    Professional development assistance
+                                </li>
+                                <li>
+                                    Referral program
+                                </li>
+                                <li>
+                                    Retirement plan
+                                </li>
+                                <li>
+                                    Vision insurance
+                                </li>
+                            </ul>
+                        </p>
+        
+                        <p>
+                            Work Location: <br>
+                            In person
+                        </p>
+                </div>
+            </div>
+
+            <div id="contact-info">
+                <div class="contact-column">
+                    <h2>Contact Info</h2>
+                    <p>NovaTech Solutions</p>
+                    <p>6997 N Glen Harbor Blvd</p>
+                    <p>(123)-456-7890</p>
+                    <p>novatechbusiness@gmail.com</p>
+                </div>
+                <div class="contact-column">
+                    <h2>Socials</h2>
+                    <p>Twitter (X): @novatechbusinessx</p>
+                    <p>Instagram: @novatechbusinessig</p>
+                    <p>Facebook: @novatechbusinessfb</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ******************************************************************************************************** -->
+
+
+    <div id="please-log-in">
+        <h3>Log in to start applying today!</h3>
+        <button type="button" id="go-to-log-in" onclick="goToLogIn()">Log In</button>
+        <button type="button" id="back-to-job-page" onclick="backToJobPage()">Cancel</button>
+    </div>
+    <script src="fbla.js"></script>
+</body>
+</html>
+
+<!-- <div class="job-container" id="job-1-container">
+    <h1>Software Engineer</h1>
+    <p>6997 N Glen Harbor Blvd</p>
+    <p>$90,000 - $130,000 per year</p>
+    <p>Design and implement cutting-edge algorithms, 
+        collaborating with cross-functional teams to 
+        develop advanced software solutions. Stay at 
+        the forefront of innovation, conducting code 
+        reviews, and optimizing performance to solve 
+        complex problems in the field of advanced computing.</p>                      
+</div>
+<div class="job-container" id="job-2-container">
+    <h1>Hardware Innovation Specialist</h1>
+    <p>6997 N Glen Harbor Blvd</p>
+    <p>$85,000 - $120,000 per year</p>
+    <p>Innovate and design hardware components, ensuring 
+        seamless integration with software solutions and 
+        pushing the boundaries of technology. Optimize 
+        and troubleshoot hardware for efficiency, contributing 
+        to the development of design specifications in 
+        pursuit of computing advancements.</p>
+</div>
+<div class="job-container" id="job-3-container">
+    <h1>Technology Solutions Consultant</h1>
+    <p>6997 N Glen Harbor Blvd</p>
+    <p>$80,000 - $110,000 per year</p>
+    <p>Collaborate with clients to understand business 
+        needs, providing strategic technology solutions 
+        and translating complex concepts into tangible 
+        business benefits. Stay informed about industry 
+        trends, offering expertise in integrating advanced 
+        technologies into diverse business operations.</p>
+</div> -->
