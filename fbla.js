@@ -34,25 +34,31 @@ const number = document.getElementById('number');
 const length = document.getElementById('length');
 
 //job list elements
-class job {
-    constructor(jobTitle, location, salary, summary, type, requirements, responsibilities, benefits, workLocation) {
-        this.jobTitle = jobTitle,
-        this.location = location,
-        this.salary = salary,
-        this.summary = summary,
-        this.type = type,
-        this.requirements = requirements,
-        this.responsibilities = responsibilities,
-        this.benefits = benefits,
-        this.workLocation = workLocation
+class Job {
+    constructor(jobTitle, location, salary, summary, type, requirements, responsibilities, benefits, workLocation, id, jobContainer) {
+        this.jobTitle = jobTitle;
+        this.location = location;
+        this.salary = salary;
+        this.summary = summary;
+        this.type = type;
+        this.requirements = requirements;
+        this.responsibilities = responsibilities;
+        this.benefits = benefits;
+        this.workLocation = workLocation;
+        this.id = id;
+        this.jobContainer = jobContainer;
     }
+    // populateJobInfo() {
+    //     jobListColumn.innerHTML = "";
+    //     jobListColumn.appendChild(this.jobContainer);
+    // }
 }
 
 jobBenefits = ["401(k)", "401(k) matching", "Dental Insurance", "Employee assistance program", "Health Insurance", "Health savings account", "Life insurance", "Professional development assistance", "Referral program", "Retirement plan", "Vision insurance"];
 
 const jobList = [
-    new job(
-    "Software Engineer", 
+    new Job(
+    "Software Engineer",
     "6997 N Glen Harbor Blvd", 
     "$90,000 - $130,000", 
     "Design and implement cutting-edge algorithms, collaborating with cross-functional teams to develop advanced software solutions. Stay at the forefront of innovation, conducting code reviews, and optimizing performance to solve complex problems in the field of advanced computing",
@@ -71,9 +77,10 @@ const jobList = [
     "Contribute to the development of technical documentation.", 
     "Participate in brainstorming sessions to generate innovative ideas."],
     jobBenefits,
-    "In person"
+    "In person",
+    "softwareEnginner"
     ),
-    new job(
+    new Job(
         "Hardware Innovation Specialist",
         "6997 N Glen Harbor Blvd", 
         "$85,000 - $120,000", 
@@ -93,9 +100,10 @@ const jobList = [
         "Contribute to the documentation of hardware design specifications.", 
         "Provide technical support to other teams and departments."],
         jobBenefits,
-        "In person"
+        "In person",
+        "hardwareSpecialist"
     ),
-    new job(
+    new Job(
         "Technology Solutions Consultant",
         "6997 N Glen Harbor Blvd", 
         "$80,000 - $110,000", 
@@ -115,11 +123,14 @@ const jobList = [
         "Stay informed about industry trends and technological advancements.", 
         "Contribute to the development of proposals and presentations for clients."],
         jobBenefits,
-        "In person"
+        "In person",
+        "consultant"
     ),
 ];
 
 const jobOpenings = document.getElementById("job-openings");
+const jobListColumn = document.getElementById("job-list-column-2");
+// const jobInfo = document.getElementById("job-info");
 
 const pleaseLogIn = document.getElementById('please-log-in');
 const noApplications = document.getElementById('no-applications');
@@ -518,36 +529,6 @@ function apply(job) {
     }
 }
 
-// function apply1() {
-//     if (localStorage.getItem("loggedIn") == "true") {
-//         // console.log("");
-//         document.location.href = "application.html";
-//     } else {
-//         pleaseLogIn.style.display = "block";
-//         jobListWrapper.style.opacity = ".3";
-//     }
-// }
-
-// function apply2() {
-//     if (localStorage.getItem("loggedIn") == "true") {
-//         // console.log("");
-//         document.location.href = "application-2.html";
-//     } else {
-//         pleaseLogIn.style.display = "block";
-//         jobListWrapper.style.opacity = ".3";
-//     }
-// }
-
-// function apply3() {
-//     if (localStorage.getItem("loggedIn") == "true") {
-//         // console.log("");
-//         document.location.href = "application-3.html";
-//     } else {
-//         pleaseLogIn.style.display = "block";
-//         jobListWrapper.style.opacity = ".3";
-//     }
-// }
-
 
 //functions to direct the user to job page or log in page
 function goToLogIn() {
@@ -566,7 +547,8 @@ const date = new Date();
 const year = date.getFullYear();
 const month = date.getMonth() + 1;
 const day = date.getDate();
-const fullDate = month + "/" + day + "/" + year;
+// const fullDate = month + "/" + day + "/" + year;
+const fullDate = `${month}/${day}/${year}`;
 
 const dateApplied1 = document.getElementById('job-1-date-applied');
 const dateApplied2 = document.getElementById('job-2-date-applied');
@@ -1002,6 +984,9 @@ if (document.body.contains(jobOpenings)) {
     jobList.map((job) => {
         let jobDiv = document.createElement('div');
         jobDiv.classList.add('job-container');
+        jobDiv.addEventListener('click', () => {
+            jobListColumn.innerHTML = job.jobContainer;
+        })
 
         let jobTitleHeader = document.createElement('h1');
         jobTitleHeader.textContent = `${job.jobTitle}`;
@@ -1021,21 +1006,90 @@ if (document.body.contains(jobOpenings)) {
 
         
         jobOpenings.appendChild(jobDiv);
+
         
-        
+        let jobApplyDiv = document.createElement('div');
+        jobApplyDiv.classList.add('job-apply');
+    
+        jobApplyDiv.innerHTML = `<h1>${job.jobTitle}</h1>
+        <p>${job.location}</p>
+        <p>${job.salary} per year</p>
+        <button type='button' class='apply' onclick='apply(${job.id})'>Apply</button>
+        `;
+
+        let jobInfoWrapper = document.createElement('div');
+        jobInfoWrapper.id = "job-info";
+        let jobInfoDiv = document.createElement('div');
+        jobInfoDiv.classList.add('job-container-info');
+
+        let jobRequirements = document.createElement('ul');
+        job.requirements.map((requirement) => {
+            let listItem = document.createElement('li');
+            listItem.innerHTML = `${requirement}`;
+            jobRequirements.appendChild(listItem);
+        }) 
+
+        let jobResponsibilities = document.createElement('ul');
+        job.responsibilities.map((duty) => {
+            let listItem = document.createElement('li');
+            listItem.innerHTML = `${duty}`;
+            jobResponsibilities.appendChild(listItem);
+        })
+
+        let jobBenefitsList = document.createElement('ul');
+        job.benefits.map((benefit) => {
+            let listItem = document.createElement('li');
+            listItem.innerHTML = `${benefit}`;
+            jobBenefitsList.appendChild(listItem);
+        })
+
+
+        jobInfoDiv.innerHTML = `<h2>Job Details</h2>
+        <p>Pay: <br>
+            ${job.salary} per year</p>
+        <p>Job Type: <br>
+            ${job.type}</p>
+            <p>
+                Job Requirements: <br>
+                ${jobRequirements.outerHTML}
+            </p>
+
+            <p>
+                Responsibilities and Duties: <br>
+                ${jobResponsibilities.outerHTML}
+            </p>
+
+            <p>
+                Benefits:
+                ${jobBenefitsList.outerHTML}
+            </p>
+
+            <p>
+                Work Location: <br>
+                ${job.workLocation}
+            </p>`;
+
+        jobInfoWrapper.appendChild(jobInfoDiv);
+
+        jobListColumn.appendChild(jobApplyDiv);
+        jobListColumn.appendChild(jobInfoWrapper);
+
+        let container = `${jobApplyDiv.outerHTML} ${jobInfoWrapper.outerHTML}`;
+        job.jobContainer = container;
     })
+
     let jobDivs = document.querySelectorAll('.job-container');
     jobDivs.forEach((div) => {
         div.addEventListener('click', function(e) {
             jobDivs.forEach((wrapper) => {
                 wrapper.style.border = ".3vw solid white";
             })
-            console.log(e.target.parentDiv);
             e.currentTarget.style.border = ".3vw solid #7A9AE4";
         })
     })
 
-    
+    jobListColumn.innerHTML = jobList[0].jobContainer;
+
 }
 
 
