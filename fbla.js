@@ -1,15 +1,48 @@
 //spreasheet data
 const sheetId = "1vXJXcvjfApen2yUimwW1ioIB0VCxCtlaEHk7J_LCTq0";
-const sheetName = encodeURIComponent("Jobs data spots");
-const sheetURL = `https://docs.google.com/spreadsheets/d/1vXJXcvjfApen2yUimwW1ioIB0VCxCtlaEHk7J_LCTq0/edit#gid=0`;
+const sheetName = encodeURIComponent("job spots");
+const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
 
-fetch (sheetURL)
-.then((response) => response.text())
-.then((csvText) => handleResponse(csvText));
+fetch(sheetURL)
+  .then((response) => response.text())
+  .then((csvText) => handleResponse(csvText));
 
-function handleResponse(csvText){
- console.log(csvText);
-}
+
+
+  function handleResponse(csvText) {
+    let sheetObjects = csvToObjects(csvText);
+    console.log(sheetObjects)
+  console.log(sheetObjects[0].Spots)
+  // console.log(sheetObjects[1])
+    // sheetObjects is now an Array of Objects
+    console.log(csvText);
+
+
+   
+    // ADD CODE HERE
+  }
+  function csvToObjects(csv){
+    const csvRows = csv.split("\n");
+    const propertyNames = csvSplit(csvRows[0]);
+    let jobsData = [];
+    for (let i = 1, max = csvRows.length; i < max; i++) {
+        let thisObject = {};
+        let row = csvSplit(csvRows[i]);
+        for (let j = 0, max = row.length; j < max; j++) {
+          thisObject[propertyNames[j]] = row[j];
+        }
+        jobsData.push(thisObject);
+      }
+      return jobsData;
+    }
+
+
+    
+    function csvSplit(row) {
+      return row.split(",").map((val) => val.substring(1, val.length - 1));
+    }
+
+
 //global element
 const pageWrapper = document.getElementById("page-wrapper");
 
