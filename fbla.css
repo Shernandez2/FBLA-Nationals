@@ -1,49 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=IBM+Plex+Mono&family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=IBM+Plex+Mono&family=Ubuntu&display=swap");
 
 /* 070436
 7A9AE4
 11EED8 */
 
-/* @media (min-width: 1280px) { */
+@media (min-width: 0px) and (max-width: 768px) {
+  /* body {
+    background-color: red;
+  } */
 
-body, html {
-    margin: 0;
-    scroll-behavior: smooth;
-}
+  /* ****************************** Nav Bar **************************** */
 
-body {
+  nav {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: 1;
     background-color: #070436;
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-nav {
-    /* background-color: rgba(8, 126, 139); */
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    /* position: fixed; */
-    /* left: 0%; */
-    /* top: 0%; */
-    /* z-index: 1; */
-}
-
-#company-name {
-    width: 20%;
-    height: 5vh;
-    color: #11EED8;
-    background-image: url(./assets/nova.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center right;
-    line-height: 5vh;
-}
-
-nav > a {
+  }
+  nav > a {
     text-decoration: none;
     border-radius: 1vw;
     text-align: center;
@@ -52,463 +27,1799 @@ nav > a {
     width: 15%;
     display: inline-block;
     margin: 0 2%;
-}
+    display: none;
+  }
+  #company-name {
+    width: 50%;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+    font-size: 5vw;
+    padding-right: 10vw;
+  }
 
-#account-tab-icon {
+  #menu {
+    height: 9vh;
+    width: 9vh;
+    padding-top: 3%;
+    padding-left: 5%;
+    float: left;
+    display: block;
+    z-index: 3;
+  }
+  #menu-content {
+    z-index: 2;
+    right: 0;
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    width: 30vw;
+    background-color: white;
+    color: #070436;
+    padding: 5%;
+    font-size: 3vw;
+  }
+  #menu-content > h1 {
+    margin-bottom: 10vh;
+  }
+  #menu-content > a {
+    display: block;
+    margin-bottom: 6vh;
+    text-decoration: none;
+    padding: 1vh;
+    font-size: 5vw;
+    border-radius: 4vw;
+  }
+  .nav-option:hover {
+    animation: hoverAnimationSmall 0.5s linear forwards;
+  }
+  #menu-content > a > img {
     width: 25%;
-    padding-top: 1vh;
-}
-
-#menu {
-    display: none;
-}
-
-#menu-content {
-    display: none;
-}
-
-nav > img {
-    width: 10%;
-    display: none;
-}
-
-@keyframes hoverAnimation {
+    background-color: #070436;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+  }
+  @keyframes hoverAnimationSmall {
     0% {
-        outline: .2vw solid #070436;
+      outline: 0.5vw solid #070436;
     }
     100% {
-        outline: .2vw solid #7A9AE4;
+      outline: 0.5vw solid #7a9ae4;
     }
+  }
+
+  /* *************************** End of navbar ************************************ */
+
+  /* ***************************home page (index.html)*************************** */
+
+  #header {
+    height: 30vh;
+    display: block;
+  }
+
+  #header-info {
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+    text-align: center;
+  }
+
+  #header-info > h1 {
+    font-size: 5vw;
+    animation: fadeDown 2s ease forwards;
+  }
+
+  #header-info > p {
+    opacity: 0;
+    font-size: 3vw;
+    animation: fadeRight 2s 2s ease forwards;
+  }
+  #header-img {
+    display: none;
+  }
+  #open-job-list {
+    width: 10vw;
+    height: 10vh;
+    padding: 2vh;
+    font-size: 4vw;
+    margin-top: 10vh;
+    line-height: 8vh;
+  }
+
+  .home-section {
+    /* height: 60vh; */
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  .home-column {
+    padding: 1.1vw;
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+
+  .home-column > h2 {
+    font-size: 4vw;
+    line-height: 5vw;
+  }
+
+  .home-image {
+    height: 80%;
+  }
+
+  .home-button-1 {
+    margin-top: 1vh;
+    padding: 1vh;
+    border-radius: 1.5vw;
+    width: 100%;
+    font-size: 3vw;
+  }
+
+  .home-button-2 {
+    margin-top: 2vh;
+    padding: 1vh;
+    border-radius: 1.5vw;
+    width: 100%;
+    font-size: 3vw;
+  }
+
+  #contact-info {
+    padding: 2vw;
+    font-size: 3vw;
+  }
+
+  .contact-column {
+    padding-left: 5vw;
+  }
+
+  /* ***************************End of Home Page*************************** */
+
+  /* ***************************Start of Login*************************** */
+
+  #log-in-header {
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+  }
+
+  #log-in {
+    padding: 4vh;
+    width: 80vw;
+    font-size: 3vh;
+  }
+
+  .account-label {
+    margin-bottom: 2vh;
+  }
+
+  .account-input {
+    height: 7vh;
+    font-size: 2.5vh;
+    margin-bottom: 1vh;
+  }
+
+  .input-wrapper {
+    margin-bottom: 5vh;
+    width: 80%;
+  }
+
+  .account-submit {
+    font-size: 4vh;
+    padding: 1.5vh;
+    width: 80%;
+  }
+
+  .account-submit > a {
+    font-size: 4vh;
+  }
+
+  .account-page-switch {
+    margin-top: 4vh;
+    font-size: 4vh;
+    width: 50%;
+  }
+
+  #sign-up-header {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
+
+  #sign-up {
+    padding: 4vh;
+    width: 80vw;
+    font-size: 3.5vw;
+  }
+
+  #pass-requirements {
+    width: 100%;
+  }
+
+  #pass-requirements > h3 {
+    font-size: 3vw;
+  }
+
+  #pass-requirements > p {
+    font-size: 3vw;
+    padding-left: 30%;
+  }
+
+  /* ***************************End of Login*************************** */
+
+  /* ***************************Start of profile page*************************** */
+
+  #profile-container {
+    width: 75vw;
+    margin-top: 7vh;
+    padding: 4vh;
+    margin-bottom: 5vh;
+  }
+
+  #account-info {
+    margin-bottom: 4vh;
+  }
+
+  #account-info > img {
+    width: 20vh;
+  }
+
+  .profile-job-container {
+    width: 70%;
+    font-size: 2vh;
+    padding: 2vh;
+    margin-top: 5vh;
+  }
+
+  .profile-column {
+    text-align: center;
+  }
+
+  .profile-column img {
+    width: 100%;
+    padding-top: 1.2vh;
+  }
+
+  #log-out {
+    font-size: 4vh;
+    margin-top: 5vh;
+    padding: 3vh;
+  }
+
+  #confirm-log-out {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  /* ***************************End of Profile*************************** */
+
+  /* *******************************Start of Job Page************************ */
+  #job-list-container {
+    display: block;
+    padding-top: 5vh;
+  }
+
+  .job-list-column {
+    width: 80%;
+  }
+
+  #job-list-title {
+    margin-top: 20vh;
+    margin-bottom: 8vh;
+  }
+
+  .job-container {
+    display: none;
+  }
+
+  #job-list-column-2 {
+    display: none;
+  }
+
+  .modal {
+    width: 70vw;
+    padding: 2vh;
+    font-size: 2.75vh;
+  }
+
+  #go-to-log-in {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .close-modal {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .job-container-mobile {
+    display: block;
+    padding: 3vh;
+    border: 0.5vh solid white;
+    border-radius: 3vh;
+    margin-bottom: 8vh;
+    transition: border 0.5s solid;
+  }
+
+  .job-container-mobile:hover {
+    border: 0.5vh solid #7a9ae4;
+    transition: border 0.5s;
+  }
+
+  /* ***********************************End of job page******************************************** */
+
+  /* ***************************About us page start*************************** */
+  #about-banner {
+    height: 33vh;
+    margin-top: 3vh;
+  }
+
+  #about-banner > h1 {
+    font-size: 4vh;
+    padding-top: 10vh;
+  }
+
+  #about-banner > img {
+    /* margin-top: 3vh; */
+    width: 12vh;
+  }
+
+  #about-us-wrapper {
+    margin-top: 7vh;
+  }
+
+  .section-wrapper {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    margin: 1vw;
+    padding: 1vw;
+    margin-bottom: 10vh;
+  }
+
+  .column {
+    width: 70%;
+    padding: 1vw;
+    font-size: 2vh;
+    line-height: 4vh;
+  }
+
+  .image {
+    height: 30vh;
+  }
+
+  #finishing-statement {
+    width: 80%;
+    line-height: 4vh;
+    font-size: 3vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  footer {
+    line-height: 7vh;
+    padding: 2vh;
+    padding-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  /* ***************************End of About us*************************** */
+
+  /* *******************************Start of Application page************************* */
+  .form {
+    width: 80%;
+    margin-top: 20vh;
+  }
+
+  .info {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .details {
+    padding-left: 12%;
+    margin-bottom: 3vh;
+  }
+
+  .input-box {
+    margin-bottom: 6vh;
+  }
+
+  .input-box > select {
+    width: 80%;
+    margin-left: 9%;
+    height: 5vh;
+  }
+
+  .input-box > textarea {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3vh;
+  }
+
+  .select-box {
+    text-align: left;
+  }
+
+  .select-details {
+    margin-right: 1vw;
+  }
+
+  .input-box > input {
+    width: 80%;
+    height: 5vh;
+    margin-bottom: 3vh;
+  }
+
+  .application-done {
+    width: 80%;
+  }
+
+  .application-done > h1 {
+    font-size: 4vh;
+  }
+
+  .application-done > h2 {
+    font-size: 2.5vh;
+    line-height: 4vh;
+  }
+
+  .application-done > img {
+    width: 40%;
+    margin-top: 8vh;
+  }
+
+  .application-done > p {
+    font-size: 3.5vh;
+  }
+
+  .application-done > a {
+    font-size: 3.5vh;
+  }
+
+  .application-fyi {
+    font-size: 2.3vh;
+    line-height: 4.1vh;
+    margin-bottom: 5vh;
+  }
+
+  .submit {
+    padding: 1.5vh;
+    font-size: 3vh;
+  }
+
+  .confirm-button {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .submitted-info {
+    width: 80%;
+    margin-top: 5vh;
+    padding: 1vw;
+  }
+
+  .submitted-info > div {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .submitted-info > h2 {
+    margin-top: 12vh;
+    margin-bottom: 3vh;
+  }
+
+  /* ***************************End of application page****************************** */
 }
 
-.nav-option:hover {
-    animation: hoverAnimation .5s linear forwards;
+@media (min-width: 769px) and (max-width: 1280px) {
+  /* body {
+    background-color: green;
+  } */
+
+  /* ****************************** Nav Bar **************************** */
+
+  nav {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: 1;
+    background-color: #070436;
+  }
+  nav > a {
+    text-decoration: none;
+    border-radius: 1vw;
+    text-align: center;
+    color: white;
+    font-size: 1.5vw;
+    width: 15%;
+    display: inline-block;
+    margin: 0 2%;
+    display: none;
+  }
+  #company-name {
+    width: 50%;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+    font-size: 5vw;
+    padding-right: 10vw;
+  }
+
+  #menu {
+    height: 9vh;
+    width: 9vh;
+    padding-top: 3%;
+    padding-left: 5%;
+    float: left;
+    display: block;
+    z-index: 3;
+  }
+  #menu-content {
+    z-index: 2;
+    right: 0;
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    width: 30vw;
+    background-color: white;
+    color: #070436;
+    padding: 5%;
+    font-size: 3vh;
+  }
+  #menu-content > h1 {
+    margin-bottom: 10vh;
+  }
+  #menu-content > a {
+    display: block;
+    margin-bottom: 6vh;
+    text-decoration: none;
+    padding: 1vh;
+    font-size: 5vh;
+    border-radius: 4vw;
+  }
+  .nav-option:hover {
+    animation: hoverAnimationSmall 0.5s linear forwards;
+  }
+  #menu-content > a > img {
+    width: 25%;
+    background-color: #070436;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+  }
+  @keyframes hoverAnimationSmall {
+    0% {
+      outline: 0.5vw solid #070436;
+    }
+    100% {
+      outline: 0.5vw solid #7a9ae4;
+    }
+  }
+
+  /* *************************** End of navbar ************************************ */
+
+  /* ***************************home page (index.html)*************************** */
+
+  #header {
+    height: 50vh;
+    display: block;
+  }
+
+  #header-info {
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+    text-align: center;
+  }
+
+  #header-info > h1 {
+    font-size: 7vh;
+    animation: fadeDown 2s ease forwards;
+  }
+
+  #header-info > p {
+    opacity: 0;
+    font-size: 5vh;
+    animation: fadeRight 2s 2s ease forwards;
+    margin-bottom: 5vh;
+  }
+  #header-img {
+    display: none;
+  }
+  #open-job-list {
+    padding: 2vh;
+    font-size: 4vh;
+    margin-top: 10vh;
+  }
+
+  .home-section {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  .home-column {
+    padding: 1.1vw;
+    font-size: 3vh;
+    line-height: 4vw;
+  }
+
+  .home-column > h2 {
+    font-size: 5vh;
+    line-height: 6vh;
+  }
+
+  .home-image {
+    height: 80%;
+  }
+
+  .home-button-1 {
+    margin-top: 1vh;
+    padding: 1vh;
+    border-radius: 1.5vw;
+    width: 100%;
+    font-size: 3vh;
+  }
+
+  .home-button-2 {
+    margin-top: 2vh;
+    padding: 1vh;
+    border-radius: 1.5vw;
+    width: 100%;
+    font-size: 3vh;
+  }
+
+  #contact-info {
+    padding: 2vw;
+    font-size: 2.3vh;
+  }
+
+  .contact-column {
+    padding-left: 5vh;
+  }
+
+  /* ***************************End of Home Page*************************** */
+
+  /* ***************************Start of Login*************************** */
+
+  #log-in-header {
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+  }
+
+  #log-in {
+    padding: 4vh;
+    width: 80vw;
+    font-size: 3vh;
+  }
+
+  .account-label {
+    margin-bottom: 2vh;
+  }
+
+  .account-input {
+    height: 7vh;
+    font-size: 2.5vh;
+    margin-bottom: 1vh;
+  }
+
+  .input-wrapper {
+    margin-bottom: 5vh;
+    width: 80%;
+  }
+
+  .account-submit {
+    font-size: 4vh;
+    padding: 1.5vh;
+    width: 80%;
+  }
+
+  .account-submit > a {
+    font-size: 4vh;
+  }
+
+  .account-page-switch {
+    margin-top: 4vh;
+    font-size: 4vh;
+    width: 50%;
+  }
+
+  #sign-up-header {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
+
+  #sign-up {
+    padding: 4vh;
+    width: 80vw;
+    font-size: 3.5vw;
+  }
+
+  #pass-requirements {
+    width: 100%;
+  }
+
+  #pass-requirements > h3 {
+    font-size: 3vw;
+  }
+
+  #pass-requirements > p {
+    font-size: 3vw;
+    padding-left: 30%;
+  }
+
+  /* ***************************End of Login*************************** */
+
+  /* ***************************Start of profile page*************************** */
+
+  #profile-container {
+    width: 75vw;
+    margin-top: 7vh;
+    padding: 4vh;
+    margin-bottom: 5vh;
+  }
+
+  #account-info {
+    margin-bottom: 4vh;
+  }
+
+  #account-info > img {
+    width: 20vh;
+  }
+
+  .profile-job-container {
+    width: 70%;
+    font-size: 2vh;
+    padding: 2vh;
+    margin-top: 5vh;
+  }
+
+  .profile-column {
+    text-align: center;
+  }
+
+  .profile-column img {
+    width: 100%;
+    padding-top: 1.2vh;
+  }
+
+  #log-out {
+    font-size: 4vh;
+    margin-top: 5vh;
+    padding: 3vh;
+  }
+
+  #confirm-log-out {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  /* ***************************End of Profile*************************** */
+
+  /* *******************************Start of Job Page************************ */
+  #job-list-container {
+    display: block;
+    padding-top: 5vh;
+  }
+
+  .job-list-column {
+    width: 80%;
+  }
+
+  #job-list-title {
+    margin-top: 20vh;
+    margin-bottom: 8vh;
+  }
+
+  .job-container {
+    display: none;
+  }
+
+  #job-list-column-2 {
+    display: none;
+  }
+
+  .modal {
+    width: 70vw;
+    padding: 2vh;
+    font-size: 2.75vh;
+  }
+
+  #go-to-log-in {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .close-modal {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .job-container-mobile {
+    display: block;
+    padding: 3vh;
+    border: 0.5vh solid white;
+    border-radius: 3vh;
+    margin-bottom: 8vh;
+    transition: border 0.5s solid;
+  }
+
+  .job-container-mobile:hover {
+    border: 0.5vh solid #7a9ae4;
+    transition: border 0.5s;
+  }
+
+  /* ***********************************End of job page******************************************** */
+
+  /* ***************************About us page start*************************** */
+  #about-banner {
+    height: 33vh;
+    margin-top: 3vh;
+  }
+
+  #about-banner > h1 {
+    font-size: 4vh;
+    padding-top: 10vh;
+  }
+
+  #about-banner > img {
+    /* margin-top: 3vh; */
+    width: 12vh;
+  }
+
+  #about-us-wrapper {
+    margin-top: 7vh;
+  }
+
+  .section-wrapper {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    margin: 1vw;
+    padding: 1vw;
+    margin-bottom: 10vh;
+  }
+
+  .column {
+    width: 70%;
+    padding: 1vw;
+    font-size: 2vh;
+    line-height: 4vh;
+  }
+
+  .image {
+    height: 30vh;
+  }
+
+  #finishing-statement {
+    width: 80%;
+    line-height: 4vh;
+    font-size: 3vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  footer {
+    line-height: 7vh;
+    padding: 2vh;
+    padding-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  /* ***************************End of About us*************************** */
+
+  /* *******************************Start of Application page************************* */
+  .form {
+    width: 80%;
+    margin-top: 20vh;
+  }
+
+  .info {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .details {
+    padding-left: 12%;
+    margin-bottom: 3vh;
+  }
+
+  .input-box {
+    margin-bottom: 6vh;
+  }
+
+  .input-box > select {
+    width: 80%;
+    margin-left: 9%;
+    height: 5vh;
+  }
+
+  .input-box > textarea {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3vh;
+  }
+
+  .select-box {
+    text-align: left;
+  }
+
+  .select-details {
+    margin-right: 1vw;
+  }
+
+  .input-box > input {
+    width: 80%;
+    height: 5vh;
+    margin-bottom: 3vh;
+  }
+
+  .application-done {
+    width: 80%;
+  }
+
+  .application-done > h1 {
+    font-size: 4vh;
+  }
+
+  .application-done > h2 {
+    font-size: 2.5vh;
+    line-height: 4vh;
+  }
+
+  .application-done > img {
+    width: 40%;
+    margin-top: 8vh;
+  }
+
+  .application-done > p {
+    font-size: 3.5vh;
+  }
+
+  .application-done > a {
+    font-size: 3.5vh;
+  }
+
+  .application-fyi {
+    font-size: 2.3vh;
+    line-height: 4.1vh;
+    margin-bottom: 5vh;
+  }
+
+  .submit {
+    padding: 1.5vh;
+    font-size: 3vh;
+  }
+
+  .confirm-button {
+    border: 0.5vh solid #070436;
+    width: 80%;
+    font-size: 2.75vh;
+    margin: 1vh;
+  }
+
+  .submitted-info {
+    width: 80%;
+    margin-top: 5vh;
+    padding: 1vw;
+  }
+
+  .submitted-info > div {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .submitted-info > h2 {
+    margin-top: 12vh;
+    margin-bottom: 3vh;
+  }
+
+  /* ***************************End of application page****************************** */
 }
 
+@media (min-width: 1280px) {
+  /* body {
+    background: #070436;
+  } */
 
+  /* ******************************* Navbar ************************************ */
 
-/* ***************************home page (index.html)*************************** */
-#header {
+  #company-name {
+    width: 20%;
+  }
+  #menu {
+    display: none;
+  }
+  nav > a {
+    text-decoration: none;
+    border-radius: 1vw;
+    text-align: center;
+    color: white;
+    font-size: 1.5vw;
+    width: 15%;
+    display: inline-block;
+    margin: 0 2%;
+  }
+  .nav-option:hover {
+    animation: hoverAnimation 0.5s linear forwards;
+  }
+
+  /* *************************** End of navbar ************************************ */
+
+  /* ***************************home page (index.html)*************************** */
+
+  #header {
     height: 85vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-
-#header-info {
+  }
+  #header-info {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20%;
     text-align: left;
-}
+  }
 
-#header-info > h1 {
+  #header-info > h1 {
     font-size: 3vw;
     animation: fadeDown 2s ease forwards;
-}
+  }
 
-#header-info > p {
+  #header-info > p {
     opacity: 0;
     font-size: 1.5vw;
     margin-top: -2vh;
     margin-bottom: 4vh;
     animation: fadeRight 2s 2s ease forwards;
-}
-
-#header-img {
-    height: 100%;
-    width: 100%;
-    
-    background-image: url(./assets/female-coder.jpg);
-
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-#open-job-list {
-    opacity: 0;
-    text-decoration: none;
+  }
+  #open-job-list {
     width: 10vw;
     height: 10vh;
     padding: 1vh;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.8vw;
-    color: #070436;
-    background-color: #11EED8;
-    border: .5vw solid #11EED8;
-    border-radius: 1vw;
     line-height: 8vh;
-    margin-left: -.1vw;
-    animation: fade 2s 4s ease forwards;
+    margin-left: -0.1vw;
+  }
+
+  .home-section {
+    height: 60vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  .home-column {
+    font-size: 2vw;
+    line-height: 7vh;
+  }
+
+  .home-column > h2 {
+    padding-top: 4vh;
+    font-size: 3vw;
+    line-height: 8vh;
+  }
+
+  .home-image {
+    height: 80%;
+  }
+
+  .home-button-1 {
+    margin-top: 4vh;
+    padding: 0.75vw;
+    border-radius: 1.5vw;
+    width: 30%;
+  }
+
+  .home-button-2 {
+    margin-top: 2vh;
+    padding: 0.75vw;
+    border-radius: 1.5vw;
+    width: 60%;
+  }
+
+  #home-login-link {
+    margin-top: -2vh;
+  }
+
+  #contact-info {
+    padding: 2vw;
+  }
+
+  .contact-column {
+    padding-left: 5vw;
+  }
+
+  /* ***************************End of Home Page*************************** */
+
+  /* ***************************Start of Login*************************** */
+
+  #log-in-header {
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+  }
+
+  #log-in {
+    padding: 1vw;
+    width: 40vw;
+    font-size: 1.3vw;
+  }
+
+  .account-label {
+    margin-bottom: 1vh;
+  }
+
+  .account-input {
+    height: 5vh;
+    font-size: 1vw;
+    margin-bottom: 1vh;
+  }
+
+  .input-wrapper {
+    margin-bottom: 5vh;
+    width: 50%;
+  }
+
+  .account-submit {
+    font-size: 1.2vw;
+    padding: 1vh;
+    width: 50%;
+  }
+
+  .account-submit > a {
+    font-size: 1.2vw;
+  }
+
+  .account-page-switch {
+    margin-top: 2vh;
+    font-size: 1.2vw;
+    width: 50%;
+  }
+
+  #sign-up-header {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
+
+  #sign-up-header > p {
+    font-size: 1.1vw;
+  }
+
+  #sign-up {
+    padding: 1vw;
+    width: 40vw;
+    font-size: 1.3vw;
+  }
+
+  #pass-requirements {
+    margin-top: -3vh;
+    width: 40%;
+  }
+
+  #pass-requirements > h3 {
+    font-size: 1.3vw;
+    margin-bottom: -1vh;
+  }
+
+  #pass-requirements > p {
+    font-size: 1.1vw;
+    padding-left: 1vw;
+  }
+
+  /* ***************************End of Login*************************** */
+
+  /* ***************************Start of profile page*************************** */
+
+  #profile-container {
+    width: 60vw;
+    margin-top: 5vh;
+    padding: 4vh;
+    margin-bottom: 5vh;
+  }
+
+  #account-info {
+    margin-bottom: 7vh;
+  }
+  #account-info > img {
+    width: 10vw;
+  }
+
+  .profile-job-container {
+    width: 50%;
+    font-size: 1.2vw;
+    padding: 1.4vw;
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-column img {
+    width: 100%;
+    padding-top: 1.2vh;
+  }
+
+  #log-out {
+    font-size: 1.3vw;
+    margin-top: 5vh;
+    padding: 2vh;
+  }
+
+  #confirm-log-out {
+    width: 30%;
+    font-size: 2vw;
+    margin: 1vh;
+  }
+
+  /* ***************************End of Profile*************************** */
+
+  /* *******************************Start of Job Page************************ */
+  #job-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5vh;
+  }
+
+  .job-list-column {
+    width: 80%;
+  }
+
+  #job-list-title {
+    margin: 2vw;
+  }
+
+  #job-info {
+    width: 100%;
+    overflow-y: scroll;
+    border-top: 0.3vw solid white;
+    height: 55.5vh;
+  }
+
+  .job-container {
+    padding: 3vw;
+    border: 0.3vw solid white;
+    border-radius: 3vw;
+    margin-bottom: 10vh;
+  }
+
+  .job-apply {
+    padding: 2vw;
+    height: 34vh;
+  }
+
+  .apply {
+    background-color: #11eed8;
+    color: #070436;
+    font-family: "Ubuntu", sans-serif;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    font-size: 1.3vw;
+    border: none;
+    margin-top: 2vh;
+  }
+
+  .apply:hover {
+    text-decoration: underline;
+  }
+
+  #job-list-column-2 {
+    border: 0.3vw solid white;
+    border-radius: 2vw;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    height: 98vh;
+  }
+
+  .job-container-info {
+    padding: 2vw;
+  }
+
+  .job-container-info > p {
+    margin-bottom: 5vh;
+  }
+
+  .modal {
+    width: 35vw;
+    padding: 2vh;
+    font-size: 1.6vw;
+  }
+
+  #go-to-log-in {
+    border: 0.5vh solid #070436;
+    width: 30%;
+    font-size: 2vw;
+    margin: 1vh;
+  }
+
+  .close-modal {
+    border: 0.5vh solid #070436;
+    width: 30%;
+    font-size: 2vw;
+    margin: 1vh;
+  }
+
+  .job-container-mobile {
+    display: none;
+  }
+
+  /* ***********************************End of job page******************************************** */
+
+  /* ***************************About us page start*************************** */
+  #about-banner {
+    height: 50vh;
+    margin-top: -3vh;
+  }
+
+  #about-banner > h1 {
+    font-size: 3vw;
+    padding: 10vh;
+  }
+
+  #about-banner > img {
+    margin-top: -13vh;
+    width: 10vw;
+  }
+
+  #about-us-wrapper {
+    margin-top: 7vh;
+  }
+
+  .section-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1vw;
+    padding: 1vw;
+    margin-bottom: 15vh;
+  }
+
+  .column {
+    width: 70%;
+    padding: 1vw;
+    font-size: 1.1vw;
+    line-height: 3vh;
+  }
+
+  .image {
+    height: 80%;
+  }
+
+  #finishing-statement {
+    width: 60%;
+    line-height: 4vh;
+    font-size: 1.1vw;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+  }
+
+  footer {
+    line-height: 7vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  /* ***************************End of About us*************************** */
+
+  /* *******************************Start of Application page************************* */
+  .form {
+    width: 30%;
+  }
+
+  .info {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .details {
+    padding-left: 12%;
+    margin-bottom: 2vh;
+  }
+
+  .input-box > select {
+    margin-bottom: 3vh;
+    width: 35%;
+  }
+
+  .input-box > textarea {
+    width: 80%;
+    margin-bottom: 3vh;
+  }
+
+  .select-box {
+    text-align: left;
+  }
+
+  .select-details {
+    margin-right: 1vw;
+  }
+
+  .input-box > input {
+    width: 80%;
+    margin-bottom: 3vh;
+  }
+
+  .application-done {
+    width: 60%;
+  }
+
+  .application-done > h1 {
+    font-size: 3vw;
+  }
+
+  .application-done > h2 {
+    font-size: 2vw;
+  }
+
+  .application-done > img {
+    width: 20%;
+    margin-top: 8vh;
+  }
+
+  .application-done > a {
+    font-size: 2vw;
+  }
+
+  #application-name {
+    text-align: center;
+  }
+
+  .application-fyi {
+    font-size: 1vw;
+    line-height: 4vh;
+  }
+
+  .submit {
+    padding: 0.8vw;
+    margin-top: 1vh;
+    font-size: 1.5vw;
+  }
+
+  .confirm-button {
+    border: 0.5vh solid #070436;
+    width: 30%;
+    font-size: 2vw;
+    margin: 1vh;
+  }
+
+  .submitted-info {
+    width: 30%;
+    margin-top: 5vh;
+    padding: 1vw;
+  }
+
+  .submitted-info > div {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .submitted-info > h2 {
+    margin-bottom: 3vh;
+  }
+
+  /* ***************************End of application page****************************** */
+}
+
+body,
+html {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #070436;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#company-name {
+  height: 5vh;
+  color: #11eed8;
+  background-image: url(./assets/nova.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center right;
+  line-height: 5vh;
+}
+
+#account-tab-icon {
+  width: 25%;
+  padding-top: 1vh;
+}
+
+#menu-content {
+  display: none;
+}
+
+nav > img {
+  width: 10%;
+  display: none;
+}
+
+@keyframes hoverAnimation {
+  0% {
+    outline: 0.2vw solid #070436;
+  }
+  100% {
+    outline: 0.2vw solid #7a9ae4;
+  }
+}
+
+/* ***************************home page (index.html)*************************** */
+
+#header-img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+
+#header-img > img {
+  height: 100%;
+}
+
+.background {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.showing {
+  opacity: 1;
+  z-index: -1;
+  transition: none;
+}
+
+#open-job-list {
+  opacity: 0;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  color: #070436;
+  background-color: #11eed8;
+  border: 0.5vw solid #11eed8;
+  border-radius: 1vw;
+  animation: fade 2s 4s ease forwards;
+  transition: color 0.5s, background-color 0.5s;
 }
 
 #open-job-list:hover {
-    background-color: #070436;
-    color: #11EED8;
+  background-color: #070436;
+  color: #11eed8;
+  transition: color 0.5s, background-color 0.5s;
 }
 
 .home-section {
-    width: 100%;
-    height: 60vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
+
 .home-section-2 {
-    background-color: lightgrey;
-    color: #070436;
+  background-color: lightgrey;
+  color: #070436;
 }
 
 .home-column {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    height: 100%;
-    padding: 1.1vw;
-    font-size: 2vw;
-    line-height: 7vh;
-}
-
-.home-column > h2 {
-    font-size: 3vw;
-    line-height: 8vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 100%;
 }
 
 .home-image {
-    height: 80%;
-    margin-top: 4vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-
-
 .home-button-1 {
-    margin-top: 4vh;
-    display: block;
-    text-decoration: none;
-    color: #11EED8;
-    background-color: #070436;
-    padding: .75vw;
-    border-radius: 1.5vw;
-    width: 30%;
-    text-align: center;
+  display: block;
+  text-decoration: none;
+  color: #11eed8;
+  background-color: #070436;
+  border-radius: 1.5vw;
+  text-align: center;
 }
 
 .home-button-1:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .home-button-2 {
-    margin-top: 2vh;
-    display: block;
-    text-decoration: none;
-    color: #070436;
-    background-color: #11EED8;
-    padding: .75vw;
-    border-radius: 1.5vw;
-    width: 60%;
-    text-align: center;
+  display: block;
+  text-decoration: none;
+  color: #070436;
+  background-color: #11eed8;
+  border-radius: 1.5vw;
+  text-align: center;
 }
 
 .home-button-2:hover {
-    text-decoration: underline;
-}
-
-#home-login-link {
-    margin-top: -2vh;
+  text-decoration: underline;
 }
 
 #contact-info {
-    padding: 2vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.contact-column {
-    padding-left: 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 /* ***************************End of Home Page*************************** */
 
-
-
-
-
-
 /* ***************************Start of Log In*************************** */
 #log-in-header {
-    text-align: center;
-    margin-top: 2vh;
-    margin-bottom: 5vh;
+  text-align: center;
 }
 
 #log-in-header > h1 {
-    animation: fadeDown 2s ease forwards;
+  animation: fadeDown 2s ease forwards;
 }
 
 #log-in {
-    color: #070436;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1vw;
-    text-align: center;
-    /* background-color: #11EED8; */
-    background-color: lightgray;
-    width: 40vw;
-    /* height: 50vh; */
-    font-size: 1.3vw;
-}
-
-.account-label {
-    margin-bottom: 1vh;
+  color: #070436;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: lightgray;
 }
 
 .account-input {
-    width: 100%;
-    height: 5vh;
-    font-size: 1vw;
-    font-family: 'Ubuntu', sans-serif;
-    margin-bottom: 1vh;
+  width: 100%;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .input-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5vh;
-    text-align: left;
-    width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 
 .account-submit {
-    border: none;
-    background-color: #070436;
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.2vw;
-    width: 50%;
-    border-radius: 1vw;
-    padding: 1vh;
-    /* border: solid #070436 .6vh; */
+  border: none;
+  background-color: #070436;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  border-radius: 1vw;
 }
 
 .account-submit > a {
-    text-decoration: none;
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.2vw;
+  text-decoration: none;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .account-submit:hover {
-    /* color: #070436; */
-    background-color: #7A9AE4;
+  background-color: #7a9ae4;
+  cursor: pointer;
 }
 
 .account-page-switch {
-    margin-top: 2vh;
-    border: none;
-    background-color: lightgrey;
-    color: #070436;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.2vw;
-    width: 50%;
-    border-radius: 1vw;
-    /* padding: 1vh; */
+  border: none;
+  background-color: lightgrey;
+  color: #070436;
+  font-family: "Ubuntu", sans-serif;
+  border-radius: 1vw;
 }
 
 .account-page-switch:hover {
-    color: #7A9AE4;
+  color: #7a9ae4;
+  cursor: pointer;
 }
-
 
 #sign-up-header {
-    text-align: center;
-    margin-top: 8vh;
-    margin-bottom: 5vh;
-}
-
-#sign-up-header > p {
-    font-size: 1.1vw;
+  text-align: center;
 }
 
 #sign-up {
-    display: none;
-    color: #070436;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1vw;
-    text-align: center;
-    /* background-color: #11EED8; */
-    background-color: lightgray;
-    width: 40vw;
-    /* height: 50vh; */
-    font-size: 1.3vw;
+  display: none;
+  color: #070436;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: lightgray;
 }
 
 #pass-requirements {
-    margin-top: -3vh;
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    display: none;
-}
-
-#pass-requirements > h3 {
-    font-size: 1.3vw;
-    margin-bottom: -1vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
 }
 
 #pass-requirements > p {
-    font-size: 1.1vw;
-    text-align: left;
-    padding-left: 1vw;
+  text-align: left;
 }
 /* ***************************End of Login*************************** */
 
-
-
-
-
-
-
 /* ***************************Start of profile page*************************** */
+
 #profile-page-wrapper {
-    text-align: center;
+  text-align: center;
 }
 
 #profile-page-wrapper > h1 {
-    color: #11EED8;
+  color: #11eed8;
 }
 
 #profile-header {
-    animation: fadeDown 2s ease forwards;
+  animation: fadeDown 2s ease forwards;
 }
 
 #profile-container {
-    width: 60vw;
-    /* height: 80vh; */
-    background-color: #7A9AE4;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5vh;
-    padding: 4vh;
-    /* padding-bottom: 4vh; */
-    text-align: center;
-    margin-bottom: 5vh;
-}
-
-#account-info {
-    margin-bottom: 7vh;
-}
-#account-info > img {
-    width: 10vw;
+  background-color: #7a9ae4;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 #no-applications {
-    display: none;
-}
-
-#job-1 {
-    display: none;
-}
-
-#job-2 {
-    display: none;
-}
-
-#job-3 {
-    display: none;
+  display: none;
 }
 
 .profile-job-container {
-    width: 50%;
-    /* height: 120%; */
-    font-size: 1.2vw;
-    background-color: white;
-    color: #070436;
-    text-align: left;
-    padding: 1.4vw;
-    margin-top: 5vh;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  background-color: white;
+  color: #070436;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.profile-column img {
-    width: 100%;
-    padding-top: 1.2vh;
-}
-
-/* .profile-job-container > div > h3 {
-    padding: 0;
-} */
-
-/* .profile-job-container > p {
-    width: 50%;
-} */
 
 #log-out {
-    border: none;
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #7A9AE4;
-    font-size: 1.3vw;
-    margin-top: 5vh;
-    padding: 1vh;
-    border-radius: 1vw;
+  border: none;
+  color: #070436;
+  font-family: "Ubuntu", sans-serif;
+  background-color: lightgray;
+  border-radius: 1vw;
+  transition: color 0.5s, background-color 0.5s;
 }
 
 #log-out:hover {
-    background-color: red;
-}
-
-#log-out-confirmation {
-    background-color: white;
-    width: 30vw;
-    color: #070436;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 40vh;
-    padding: 1vh;
-    display: none;
-    text-align: center;
-    position: fixed;
+  transition: color 0.5s, background-color 0.5s;
+  background-color: red;
+  color: white;
+  cursor: pointer;
 }
 
 #confirm-log-out {
-    background-color: white;
-    border: .5vh solid #070436;
-    font-family: 'Ubuntu', sans-serif;
-    width: 30%;
-    font-size: 2vw;
-    margin: 1vh;
-}
-
-#confirm-log-out:hover {
-    text-decoration: underline;
-}
-
-#reject-log-out {
-    background-color: #070436;
-    color: white;
-    border: .5vh solid #070436;
-    font-family: 'Ubuntu', sans-serif;
-    width: 30%;
-    font-size: 2vw;
-    margin: 1vh;
-}
-
-#reject-log-out:hover {
-    text-decoration: underline;
+  background-color: white;
+  border: 0.5vh solid #070436;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #profile-picture {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 /* #profile-picture:hover {
@@ -575,536 +1886,299 @@ nav > img {
 
 /* ***************************End of Profile*************************** */
 
-
-
-
-
-
-
 /* *******************************Start of Job Page************************ */
-#job-list-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 5vh;
-}
 
 .job-list-column {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  /* display: flex;
+    align-items: center;
+    justify-content: center; */
 }
 
 #job-list-title {
-    animation: fadeDown 2s ease forwards;
-    text-align: center;
-    margin: 2vw;
+  animation: fadeDown 2s ease forwards;
+  text-align: center;
 }
 
-#job-info {
-    width: 100%;
-    overflow-y: scroll;
-    border-top: .3vw solid white;
-    height: 55.5vh;
-    /* border-radius: 3vw; */
+.modal {
+  background-color: white;
+  color: #070436;
+  text-align: center;
+  border-radius: 1rem;
+  /* transition: text-decoration 5s; */
 }
 
-.job-container {
-    padding: 3vw;
-    border: .3vw solid white;
-    border-radius: 3vw;
-    margin-bottom: 10vh;
-}
-
-#job-1-container {
-    border: .3vw solid #7A9AE4;
-}
-
-.job-apply {
-    padding: 2vw;
-    height: 34vh;
-}
-
-/* #job-apply-1 {
-    display: none;
-} */
-
-#job-apply-2 {
-    display: none;
-}
-
-#job-apply-3 {
-    display: none;
-}
-
-.apply {
-    background-color: #11EED8;
-    color: #070436;
-    font-family: 'Ubuntu', sans-serif;
-    padding: .5vw;
-    border-radius: 1vw;
-    font-size: 1.3vw;
-    border: none;
-    margin-top: 2vh;
-}
-
-.apply:hover {
-    text-decoration: underline;
-}
-
-#job-list-column-2 {
-    border: .3vw solid white;
-    border-radius: 2vw;
-    overflow: hidden;
-    position: sticky;
-    top: 0;
-    height: 98vh;
-}
-
-.job-container-info {
-    padding: 2vw;
-}
-
-.job-container-info > p {
-    margin-bottom: 5vh;
-}
-
-/* #job-container-info-1 {
-    display: none;
-} */
-
-#job-container-info-2 {
-    display: none;
-}
-
-#job-container-info-3 {
-    display: none;
-}
-
-#please-log-in {
-    background-color: white;
-    width: 30vw;
-    color: #070436;
-    position: fixed;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 40vh;
-    padding: 1vh;
-    font-size: 1.6vw;
-    display: none;
-    text-align: center;
-    
-    position: fixed;
+.modal > button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  /* transition: text-decoration 5s; */
 }
 
 #go-to-log-in {
-    background-color: white;
-    border: .5vh solid #070436;
-    font-family: 'Ubuntu', sans-serif;
-    width: 30%;
-    font-size: 2vw;
-    margin: 1vh;
+  background-color: white;
+  font-family: "Ubuntu", sans-serif;
 }
 
-#back-to-job-page {
-    background-color: #070436;
-    color: white;
-    border: .5vh solid #070436;
-    font-family: 'Ubuntu', sans-serif;
-    width: 30%;
-    font-size: 2vw;
-    margin: 1vh;
-}
-
-.job-apply-phone {
-    display: none;
+.close-modal {
+  background-color: #070436;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
 }
 
 /* ***********************************End of job page******************************************** */
 
-
-
-
-
 /* ***************************About us page start*************************** */
 #about-banner {
-    text-align: center;
-    width: 100%;
-    height: 50vh;
-    background-image: url(./assets/coders-meeting.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    margin-top: -3vh;
+  text-align: center;
+  width: 100%;
+  background-image: url(./assets/coders-meeting.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 #about-banner > h1 {
-    font-size: 3vw;
-    text-align: center;
-    padding: 10vh;
-    text-shadow: .3vw .3vw .4vw #000000;
-    /* background-color: #070436; */
-    animation: fadeDown 2s ease forwards;
+  text-align: center;
+  text-shadow: 0.3vw 0.3vw 0.4vw #000000;
+  animation: fadeDown 2s ease forwards;
 }
 
 #about-banner > img {
-    opacity: 0;
-    margin-top: -13vh;
-    width: 10vw;
-    animation: fade 2s 2s ease forwards;
+  opacity: 0;
+  animation: fade 2s 2s ease forwards;
 }
 
 #about-us-wrapper {
-    text-align: center;
-    margin-top: 7vh;
+  text-align: center;
 }
 
-.section-wrapper {
+/* .section-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 1vw;
     padding: 1vw;
     margin-bottom: 5vh;
-}
+} */
 
 .column {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    height: 100%;
-    padding: 1vw;
-    font-size: 1.1vw;
-    line-height: 3vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .column > h2 {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .image {
-    height: 80%;
-    margin-top: 5vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 #finishing-statement {
-    width: 60%;
-    line-height: 4vh;
-    font-size: 1.1vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #finishing-statement > a {
-    color: #11EED8;
+  color: #11eed8;
 }
 
 footer {
-    width: 100%;
-    line-height: 7vh;
-    text-align: center;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    margin-top: 1vh;
-    color: #070436;
-    background-color: lightgrey;
+  text-align: center;
+  color: #070436;
+  background-color: lightgrey;
 }
 
 .about-img-1 {
-    background-image: url(./assets/nova.png);
+  background-image: url(./assets/nova.png);
 }
 
 .about-img-2 {
-    background-image: url(./assets/comp-hardware-specialist.jpeg);
+  background-image: url(./assets/comp-hardware-specialist.jpeg);
 }
 
 .about-img-3 {
-    background-image: url(./assets/west-mec-logo.png);
+  background-image: url(./assets/west-mec-logo.png);
 }
 
 .about-img-4 {
-    background-image: url(./assets/computer-internals.jpeg);
+  background-image: url(./assets/computer-internals.jpeg);
 }
 
 .about-img-5 {
-    background-image: url(./assets/counseling.jpg);
+  background-image: url(./assets/counseling.jpg);
 }
 
 .about-img-6 {
-    background-image: url(./assets/diversity.jpeg);
+  background-image: url(./assets/diversity.jpeg);
 }
 /* ***************************End of About us*************************** */
 
-
-
-
-
 /* *******************************Start of Application page************************* */
 .form {
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .info {
-    text-align: center;
-    background-color: lightgray;
-    color: #070436;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    margin-bottom: 5vh;
+  text-align: center;
+  background-color: lightgray;
+  color: #070436;
 }
 
 .details {
-    display: block;
-    text-align: left;
-    padding-left: 12%;
-    margin-bottom: 2vh;
+  display: block;
+  text-align: left;
 }
 
 .input-box > select {
-    display: inline-block;
-    font-family: 'Ubuntu', sans-serif;
-    margin-bottom: 3vh;
-    width: 35%;
+  display: inline-block;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .input-box > textarea {
-    width: 80%;
-    margin-bottom: 3vh;
-    font-family: 'Ubuntu', sans-serif;
-    resize: vertical;
-}
-
-.select-box {
-    text-align: left;
+  font-family: "Ubuntu", sans-serif;
+  resize: vertical;
 }
 
 .select-details {
-    display: inline-block;
-    margin-right: 1vw;
+  display: inline-block;
 }
 
 .input-box > input {
-    font-family: 'Ubuntu', sans-serif;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    margin-bottom: 3vh;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .application-done {
-    display: none;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.application-done > h1 {
-    font-size: 3vw;
-}
-
-.application-done > h2 {
-    font-size: 2vw;
-}
-
-.application-done > img {
-    width: 20%;
-    margin-top: 8vh;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .application-done > p {
-    color: #11EED8;
-    font-size: 2.5vw;
-    margin-top: 2vh;
+  color: #11eed8;
 }
 
 .application-done > a {
-    color: #11EED8;
-    display: block;
-    font-size: 2vw;
+  color: #11eed8;
+  display: block;
 }
 
-.application-name {
-    text-align: center;
-    color: #11EED8;
+#application-name {
+  text-align: center;
+  color: #11eed8;
 }
 
 .application-fyi {
-    text-align: center;
-    font-size: 1vw;
-    line-height: 4vh;
+  text-align: center;
 }
 
 .submit {
-    background-color: #070436;
-    border: none;
-    padding: .8vw;
-    border-radius: 1vw;
-    margin-top: 1vh;
-    color: #11EED8;
-    text-decoration: none;
-    font-size: 1.5vw;
-    font-family: 'Ubuntu', sans-serif;
+  background-color: #070436;
+  border: none;
+  border-radius: 1vw;
+  color: #11eed8;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .submit:hover {
-    text-decoration: underline;
-}
-
-.submit-notice {
-    background-color: white;
-    width: 40%;
-    color: #070436;
-    position: fixed;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 30vh;
-    padding: 1vh;
-    font-size: 1.6vw;
-    text-align: center;    
+  text-decoration: underline;
 }
 
 .confirm-button {
-    background-color: white;
-    border: .5vh solid #070436;
-    font-family: 'Ubuntu', sans-serif;
-    width: 30%;
-    font-size: 2vw;
-    margin: 1vh;   
-}
-
-.reject-button {
-    background-color: #070436;
-    color: white;
-    border: .5vh solid #070436;
-    font-family: 'Ubuntu', sans-serif;
-    width: 30%;
-    font-size: 2vw;
-    margin: 1vh;
+  background-color: white;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .hover-underline:hover {
-    text-decoration: underline;
-}
-
-#submit-application-notice-1 {
-    display: none;
-}
-
-#submit-application-notice-2 {
-    display: none;
-}
-
-#submit-application-notice-3 {
-    display: none;
-}
-
-#incomplete-application-notice {
-    display: none;
+  text-decoration: underline;
 }
 
 .submitted-info {
-    display: none;
-    color: #070436;
-    text-align: left;
-    width: 30%;
-    margin-top: 5vh;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1vw;
-    /* background-color: lightgray; */
+  display: none;
+  color: #070436;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .submitted-info > h1 {
-    text-align: center;
-    color: #11EED8;
+  text-align: center;
+  color: #11eed8;
 }
 
 .submitted-info > div {
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    background-color: lightgray;
+  background-color: lightgray;
 }
 
 .submitted-info > h2 {
-    text-align: center;
-    margin-bottom: 3vh;
-    color: white;
+  text-align: center;
+  color: white;
 }
 
-
 .optional-input {
-    display: none;
+  display: none;
 }
 /* ***************************End of application page****************************** */
 
-/* } */
-
 .job-container:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-#go-to-log-in:hover {
-    text-decoration: underline;
+.close-modal:hover {
+  text-decoration: underline;
 }
 
-#back-to-job-page:hover {
-    text-decoration: underline;
+.close-modal:hover {
+  text-decoration: underline;
 }
-
 
 @keyframes fadeDown {
-    0% {
-        transform: translateY(-10vh);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0vh);
-        opacity: 1;
-    }
+  0% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeRight {
-    0% {
-        transform: translateX(-10vw);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0vw);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(-10vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0vw);
+    opacity: 1;
+  }
 }
 
 @keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-
 .home-img-1 {
-    background-image: url(./assets/coder-on-phone.jpeg);
+  background-image: url(./assets/coder-on-phone.jpeg);
 }
 
 .home-img-2 {
-    background-image: url(./assets/coders-talking.jpg);
+  background-image: url(./assets/coders-talking.jpg);
 }
 
 .home-img-3 {
-    background-image: url(./assets/coder-thinking.jpg);
+  background-image: url(./assets/coder-thinking.jpg);
 }

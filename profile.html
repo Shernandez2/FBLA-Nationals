@@ -40,44 +40,8 @@
                             <br>
                             <a href="job-list.html">Apply today!</a>
                         </p>
-    
-                        <div id="job-1" class="profile-job-container">
-                            <div class="profile-column">
-                                <h3>Software Engineer</h3>
-                                <p>Date Applied:</p>
-                                <p id="job-1-date-applied"></p>
-                                <a href="application.html">More</a>
-                            </div>
-                            <div class="profile-column">
-                                <img src="./assets/female-coder.jpg" alt="girl coding">
-                            </div>
-                        </div>
-    
-                        <div id="job-2" class="profile-job-container">
-                            <div class="profile-column">
-                                <h3>Hardware Innovation Specialist</h3>
-                                <p>Date Applied:</p>
-                                <p id="job-2-date-applied"></p>
-                                <a href="application-2.html">More</a>
-                            </div>
-                            <div class="profile-column">
-                                <img src="./assets/coder-thinking.jpg" alt="coder thinking">
-                            </div>
-                        </div>
-    
-                        <div id="job-3" class="profile-job-container">
-                            <div class="profile-column">
-                                <h3>Technology Solutions Consultant</h3>
-                                <p>Date Applied:</p>
-                                <p id="job-3-date-applied"></p>
-                                <a href="application-3.html">More</a>
-                            </div>
-                            <div class="profile-column">
-                                <img src="./assets/counseling.jpg" alt="counseling">
-                            </div>
-                        </div>
                     </div>
-                    <button id="log-out" onclick="logOut()">Log Out</button>
+                    <button type="button" id="log-out" onclick="logOut()">Log Out</button>
                 </div>
             </div>
             
@@ -88,11 +52,13 @@
                 <button onclick="saveProfilePicture()" type="button" id="save-profile-picture">Save</button>  <button id="exit-profile-window" type="button" onclick="exitProfileWindow()">Back</button>
             </div> -->
         </div>
-        
-        <div id="log-out-confirmation">
-            <h1>Are you sure you want to log out?</h1>
-            <button id="confirm-log-out" onclick="confirmLogOut()">Yes</button><button id="reject-log-out" onclick="rejectLogOut()">No</button>
-        </div>
+
+        <dialog class="modal">
+            <h2>Are you sure you want to log out?</h2>
+            <button id="confirm-log-out" onclick="confirmLogOut()">Yes</button>
+            <button type="button" class="close-modal">No</button>
+        </dialog>
+    
 
     <script src="fbla.js"></script>
 </body>
