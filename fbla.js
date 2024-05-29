@@ -1,3 +1,15 @@
+//spreasheet data
+const sheetId = "1vXJXcvjfApen2yUimwW1ioIB0VCxCtlaEHk7J_LCTq0";
+const sheetName = encodeURIComponent("Jobs data spots");
+const sheetURL = `https://docs.google.com/spreadsheets/d/1vXJXcvjfApen2yUimwW1ioIB0VCxCtlaEHk7J_LCTq0/edit#gid=0`;
+
+fetch (sheetURL)
+.then((response) => response.text())
+.then((csvText) => handleResponse(csvText));
+
+function handleResponse(csvText){
+ console.log(csvText);
+}
 //global element
 const pageWrapper = document.getElementById("page-wrapper");
 
