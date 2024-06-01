@@ -1,47 +1,6 @@
 //spreasheet data
-const sheetId = "1vXJXcvjfApen2yUimwW1ioIB0VCxCtlaEHk7J_LCTq0";
-const sheetName = encodeURIComponent("job spots");
-const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
 
-fetch(sheetURL)
-  .then((response) => response.text())
-  .then((csvText) => handleResponse(csvText));
-
-
-
-  function handleResponse(csvText) {
-    let sheetObjects = csvToObjects(csvText);
-    console.log(sheetObjects)
-  console.log(sheetObjects[0].Spots)
-  // console.log(sheetObjects[1])
-    // sheetObjects is now an Array of Objects
-    console.log(csvText);
-
-
-   
-    // ADD CODE HERE
-  }
-  function csvToObjects(csv){
-    const csvRows = csv.split("\n");
-    const propertyNames = csvSplit(csvRows[0]);
-    let jobsData = [];
-    for (let i = 1, max = csvRows.length; i < max; i++) {
-        let thisObject = {};
-        let row = csvSplit(csvRows[i]);
-        for (let j = 0, max = row.length; j < max; j++) {
-          thisObject[propertyNames[j]] = row[j];
-        }
-        jobsData.push(thisObject);
-      }
-      return jobsData;
-    }
-
-
-    
-    function csvSplit(row) {
-      return row.split(",").map((val) => val.substring(1, val.length - 1));
-    }
-
+// console.log(sheetObjects[0].spots)
 
 //global element
 const pageWrapper = document.getElementById("page-wrapper");
@@ -78,139 +37,252 @@ const length = document.getElementById("length");
 
 //job list elements
 class Job {
-  constructor(
-    jobTitle,
-    location,
-    salary,
-    avgSalary,
-    summary,
-    type,
-    requirements,
-    responsibilities,
-    benefits,
-    workLocation,
-    id,
-    imgSrc,
-    jobContainer
-  ) {
-    this.jobTitle = jobTitle;
-    this.location = location;
-    this.salary = salary;
-    this.summary = summary;
-    this.type = type;
-    this.requirements = requirements;
-    this.responsibilities = responsibilities;
-    this.benefits = benefits;
-    this.workLocation = workLocation;
-    this.id = id;
-    this.imgSrc = imgSrc;
-    this.jobContainer = jobContainer;
+  constructor(jobTitle, location, salary, summary, type, requirements, responsibilities, benefits, workLocation, id, jobContainer) {
+      this.jobTitle = jobTitle;
+      this.location = location;
+      this.salary = salary;
+      this.summary = summary;
+      this.type = type;
+      this.requirements = requirements;
+      this.responsibilities = responsibilities;
+      this.benefits = benefits;
+      this.workLocation = workLocation;
+      this.id = id;
+      this.jobContainer = jobContainer;
   }
+  // populateJobInfo() {
+  //     jobListColumn.innerHTML = "";
+  //     jobListColumn.appendChild(this.jobContainer);
+  // }
 }
 
-jobBenefits = [
-  "401(k)",
-  "401(k) matching",
-  "Dental Insurance",
-  "Employee assistance program",
-  "Health Insurance",
-  "Health savings account",
-  "Life insurance",
-  "Professional development assistance",
-  "Referral program",
-  "Retirement plan",
-  "Vision insurance",
-];
+
+
+
+jobBenefits = ["401(k)", "401(k) matching", "Dental Insurance", "Employee assistance program", "Health Insurance", "Health savings account", "Life insurance", "Professional development assistance", "Referral program", "Retirement plan", "Vision insurance"];
 
 const jobList = [
   new Job(
-    "Software Engineer",
-    "6997 N Glen Harbor Blvd",
-    "$90,000 - $130,000",
-    1,
-    "Design and implement cutting-edge algorithms, collaborating with cross-functional teams to develop advanced software solutions. Stay at the forefront of innovation, conducting code reviews, and optimizing performance to solve complex problems in the field of advanced computing",
-    "Full-time",
-    [
-      "Proven experience in developing cutting-edge algorithms and advanced software solutions.",
-      "Proficiency in programming languages such as C++, Java, Python, etc.",
-      "Strong analytical and problem-solving skills.",
-      "Knowledge of machine learning and artificial intelligence is a plus.",
-      "Ability to work collaboratively in a team environment.",
-      "Passion for innovation and staying up-to-date with the latest advancements in software engineering.",
-    ],
-    [
-      "Research, design, and implement complex algorithms to solve challenging problems.",
-      "Collaborate with cross-functional teams to develop and integrate advanced software solutions.",
-      "Conduct code reviews and provide constructive feedback to team members.",
-      "Optimize software performance and ensure scalability.",
-      "Stay informed about industry trends and emerging technologies.",
-      "Contribute to the development of technical documentation.",
-      "Participate in brainstorming sessions to generate innovative ideas.",
-    ],
-    jobBenefits,
-    "In person",
-    "softwareEnginner",
-    "./assets/female-coder.jpg"
+  "Software Engineer",
+  "6997 N Glen Harbor Blvd", 
+  "$90,000 - $130,000", 
+  "Design and implement cutting-edge algorithms, collaborating with cross-functional teams to develop advanced software solutions. Stay at the forefront of innovation, conducting code reviews, and optimizing performance to solve complex problems in the field of advanced computing",
+  "Full-time",
+  ["Proven experience in developing cutting-edge algorithms and advanced software solutions.", 
+  "Proficiency in programming languages such as C++, Java, Python, etc.",
+  "Strong analytical and problem-solving skills.",
+  "Knowledge of machine learning and artificial intelligence is a plus.", 
+  "Ability to work collaboratively in a team environment.", 
+  "Passion for innovation and staying up-to-date with the latest advancements in software engineering."],
+  ["Research, design, and implement complex algorithms to solve challenging problems.", 
+  "Collaborate with cross-functional teams to develop and integrate advanced software solutions.", 
+  "Conduct code reviews and provide constructive feedback to team members.", 
+  "Optimize software performance and ensure scalability.", 
+  "Stay informed about industry trends and emerging technologies.", 
+  "Contribute to the development of technical documentation.", 
+  "Participate in brainstorming sessions to generate innovative ideas."],
+  jobBenefits,
+  "In person",
+  "softwareEnginner"
   ),
   new Job(
-    "Hardware Innovation Specialist",
-    "6997 N Glen Harbor Blvd",
-    "$85,000 - $120,000",
-    2,
-    "Innovate and design hardware components, ensuring seamless integration with software solutions and pushing the boundaries of technology. Optimize and troubleshoot hardware for efficiency, contributing to the development of design specifications in pursuit of computing advancements.",
-    "Full-time",
-    [
-      "Proven experience in designing and optimizing hardware components.",
+      "Hardware Innovation Specialist",
+      "6997 N Glen Harbor Blvd", 
+      "$85,000 - $120,000", 
+      "Innovate and design hardware components, ensuring seamless integration with software solutions and pushing the boundaries of technology. Optimize and troubleshoot hardware for efficiency, contributing to the development of design specifications in pursuit of computing advancements.",
+      "Full-time",
+      ["Proven experience in designing and optimizing hardware components.", 
       "Knowledge of hardware programming languages and tools.",
-      "Familiarity with emerging technologies in the hardware domain.",
-      "Strong problem-solving and troubleshooting skills.",
-      "Ability to collaborate with cross-functional teams.",
-      "Passion for pushing the boundaries of technology through hardware innovation.",
-    ],
-    [
-      "Research, design, and innovate hardware components for computing advancements.",
-      "Collaborate with hardware engineers and software developers to ensure seamless integration.",
-      "Optimize and troubleshoot hardware solutions for performance and efficiency.",
-      "Stay updated on industry trends and technological advancements in hardware.",
-      "Conduct testing and validation of hardware prototypes.",
-      "Contribute to the documentation of hardware design specifications.",
-      "Provide technical support to other teams and departments.",
-    ],
-    jobBenefits,
-    "In person",
-    "hardwareSpecialist",
-    "./assets/coder-thinking.jpg"
+      "Familiarity with emerging technologies in the hardware domain.", 
+      "Strong problem-solving and troubleshooting skills.", 
+      "Ability to collaborate with cross-functional teams.", 
+      "Passion for pushing the boundaries of technology through hardware innovation."],
+      ["Research, design, and innovate hardware components for computing advancements.", 
+      "Collaborate with hardware engineers and software developers to ensure seamless integration.", 
+      "Optimize and troubleshoot hardware solutions for performance and efficiency.", 
+      "Stay updated on industry trends and technological advancements in hardware.", 
+      "Conduct testing and validation of hardware prototypes.", 
+      "Contribute to the documentation of hardware design specifications.", 
+      "Provide technical support to other teams and departments."],
+      jobBenefits,
+      "In person",
+      "hardwareSpecialist"
   ),
   new Job(
-    "Technology Solutions Consultant",
-    "6997 N Glen Harbor Blvd",
-    "$80,000 - $110,000",
-    3,
-    "Collaborate with clients to understand business needs, providing strategic technology solutions and translating complex concepts into tangible business benefits. Stay informed about industry trends, offering expertise in integrating advanced technologies into diverse business operations.",
-    "Full-time",
-    [
-      "Proven experience as a technology consultant or in a similar role.",
-      "Strong communication and interpersonal skills.",
-      "Strategic thinking with the ability to align technology solutions with business goals.",
-      "Understanding of advanced technologies and their applications in different industries.",
-      "Problem-solving and analytical skills.",
-      "Project management skills are a plus.",
-    ],
-    [
-      "Collaborate with clients to understand their business needs and challenges.",
-      "Assess and analyze existing technologies to recommend improvements.",
-      "Develop technology solutions that align with clients' business objectives.",
-      "Communicate complex technological concepts to non-technical stakeholders.",
-      "Provide training and support during the implementation of technology solutions.",
-      "Stay informed about industry trends and technological advancements.",
-      "Contribute to the development of proposals and presentations for clients.",
-    ],
-    jobBenefits,
-    "In person",
-    "consultant",
-    "./assets/counseling.jpg"
+      "Technology Solutions Consultant",
+      "6997 N Glen Harbor Blvd", 
+      "$80,000 - $110,000", 
+      "Collaborate with clients to understand business needs, providing strategic technology solutions and translating complex concepts into tangible business benefits. Stay informed about industry trends, offering expertise in integrating advanced technologies into diverse business operations.",
+      "Full-time",
+      ["Proven experience as a technology consultant or in a similar role.", 
+      "Strong communication and interpersonal skills.", 
+      "Strategic thinking with the ability to align technology solutions with business goals.", 
+      "Understanding of advanced technologies and their applications in different industries.", 
+      "Problem-solving and analytical skills.", 
+      "Project management skills are a plus."],
+      ["Collaborate with clients to understand their business needs and challenges.", 
+      "Assess and analyze existing technologies to recommend improvements.", 
+      "Develop technology solutions that align with clients' business objectives.", 
+      "Communicate complex technological concepts to non-technical stakeholders.", 
+      "Provide training and support during the implementation of technology solutions.", 
+      "Stay informed about industry trends and technological advancements.", 
+      "Contribute to the development of proposals and presentations for clients."],
+      jobBenefits,
+      "In person",
+      "consultant"
   ),
 ];
+
+const sheetId = "1vXJXcvjfApen2yUimwW1ioIB0VCxCtlaEHk7J_LCTq0";
+const sheetName = encodeURIComponent("job spots");
+const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
+
+fetch(sheetURL)
+  .then((response) => response.text())
+  .then((csvText) => handleResponse(csvText));
+
+
+
+  function handleResponse(csvText) {
+    let sheetObjects = csvToObjects(csvText);
+    console.log(sheetObjects)
+
+    
+  
+
+  console.log(jobList);
+
+    // jobSpots = sheetObjects.map(obj => ({ Jobs: obj.name, Spots: parseInt(obj.quantity) }));
+  console.log(sheetObjects[0].Spots)
+
+  
+  
+  // function applicationLimit(){
+  //   let jobSpot = sheetObjects.find(obj => obj.name === jobSpotName);
+  //   if (item){
+  //     let quantity = parseInt(jobSpot.quantity, 5 );
+
+  //     if(quantity > 0){
+  //       quantity -=1;
+  //       item.quantity = quantity.toString();
+  //       console.log(`${jobSpot.name}'s quantity decreased to ${jobSpot.quantity}`);
+  //     }
+  //   }
+  // }
+  // function applicationLimit(){
+  // if()
+    console.log(csvText);
+  function subtractSpotFromJob(selectedJob) {
+    // Find the selected job in the jobList array
+    const job = jobList.find(job => job.jobTitle === selectedJob);
+    console.log("Selected job:", job);
+  
+    // Find the corresponding job spot in the spreadsheet data
+    const jobSpot = sheetObjects.find(obj => obj.name === job.jobTitle);
+    console.log("Job spot from sheet:", jobSpot);
+  
+    // Subtract one spot if job spot exists and quantity is greater than 0
+    if (jobSpot && parseInt(jobSpot.quantity) > 0) {
+      jobSpot.quantity = (parseInt(jobSpot.quantity) - 1).toString();
+      console.log(`${job.jobTitle}'s quantity decreased to ${jobSpot.quantity}`);
+  
+      // Update the spreadsheet with the new quantity
+      // updateSpreadsheet(jobSpot);
+    } else {
+      console.log(`${job.jobTitle} has no available spots.`);
+    }
+  }
+  // Example: Call the function with the selected job title
+  const selectedJobTitle = "Software Engineer"; // Example
+  subtractSpotFromJob(selectedJobTitle);
+  function onJobSelection(selectedJobTitle) {
+    // Call the function to subtract a spot for the selected job
+    subtractSpotFromJob(selectedJobTitle);
+  };
+ 
+}
+
+// Other functions and code...
+
+// Event listener or function that triggers when a user selects a job
+
+
+
+
+  
+  // }
+  
+  // console.log(sheetObjects[1])
+    // sheetObjects is now an Array of Objects
+    
+
+   
+    // ADD CODE HERE
+  
+  function csvToObjects(csv){
+    const csvRows = csv.split("\n");
+    const propertyNames = csvSplit(csvRows[0]);
+    let jobsData = [];
+    for (let i = 1, max = csvRows.length; i < max; i++) {
+        let thisObject = {};
+        let row = csvSplit(csvRows[i]);
+        for (let j = 0, max = row.length; j < max; j++) {
+          thisObject[propertyNames[j]] = row[j];
+        }
+        jobsData.push(thisObject);
+      }
+      return jobsData;
+    }
+
+
+    
+    function csvSplit(row) {
+      return row.split(",").map((val) => val.substring(1, val.length - 1));
+    }
+
+// function decreaseJobSpot(selectedJob) {
+//   // Find the job in the jobSpots array
+//   let job = jobSpots.find(job => job.Jobs === selectedJob);
+//   if (job) {
+//       // Decrease the spots by 1 if spots are greater than 0
+//       if (job.Spots > 0) {
+//           job.Spots--;
+//           console.log(`Spot for ${selectedJob} decreased successfully. Remaining spots: ${job.Spots}`);
+//       } else {
+//           console.log(`No spots available for ${selectedJob}.`);
+//       }
+//   } else {
+//       console.log(`Job ${selectedJob} not found.`);
+//   }
+// }
+// function updateJobSpotsInJobsArray(selectedJob, remainingSpots) {
+//   // Find the job in the jobs array (using case-insensitive comparison)
+//   let job = jobList.find(job => job.jobTitle.toLowerCase() === selectedJob.toLowerCase());
+//   if (job) {
+//       // Update the spots in the job object
+//       job.spots = remainingSpots;
+//       console.log(`Spots updated for ${selectedJob} in the jobs array.`);
+//   } else {
+//       console.log(`Job ${selectedJob} not found in the jobs array.`);
+//   }
+// }
+// function decreaseJobSpot(selectedJob) {
+//     // Find the job in the jobList array
+//     let jobIndex = jobList.findIndex(job => job.jobTitle === selectedJob);
+//     if (jobIndex !== -1) {
+//         // Decrease the spots using the Job class method
+//         let success = jobList[jobIndex].decreaseSpots();
+//         if (success) {
+//             alert(`Spot for ${selectedJob} decreased successfully.`);
+//         } else {
+//             alert(`No spots available for ${selectedJob}.`);
+//         }
+//     } else {
+//         alert(`Job ${selectedJob} not found.`);
+//     }
+// }
+
+
 
 const jobOpenings = document.getElementById("job-openings");
 const jobListColumn = document.getElementById("job-list-column-2");
