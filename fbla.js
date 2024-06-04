@@ -139,7 +139,7 @@ const jobList = [
     "./assets/coder-thinking.jpg"
   ),
   new Job(
-    "Technology Solutions Consultant",
+    "Technology Solution consultant",
     "6997 N Glen Harbor Blvd",
     "$80,000 - $110,000",
     3,
@@ -164,58 +164,13 @@ const jobList = [
     ],
     jobBenefits,
     "In person",
-    "consultant",
+    "TechnologySolutionConsultant",
     "./assets/counseling.jpg"
   ),
 ];
 
 
-//spreasheet data
-const sheetId = "1vXJXcvjfApen2yUimwW1ioIB0VCxCtlaEHk7J_LCTq0";
-const sheetName = encodeURIComponent("job spots");
-const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
 
-fetch(sheetURL)
-  .then((response) => response.text())
-  .then((csvText) => handleResponse(csvText));
-
-
-
-  function handleResponse(csvText) {
-    let sheetObjects = csvToObjects(csvText);
-    console.log(sheetObjects)
-  console.log(sheetObjects[0].Spots)
-  // console.log(sheetObjects[1])
-    // sheetObjects is now an Array of Objects
-    console.log(csvText);
-
-    function subtractSpotByJobTitle(jobTitle) {
-      // Find the object with the given jobTitle
-      const jobObject = sheetObjects.find(obj => obj.JobTitle === jobTitle);
-      if (jobObject) {
-        // If the job object is found, subtract one from its Spots property
-        jobObject.Spots = parseInt(jobObject.Spots) - 1;
-        console.log(`One spot subtracted from ${jobTitle}. Remaining spots: ${jobObject.Spots}`);
-      } else {
-        console.log(`Job with title '${jobTitle}' not found.`);
-      }  
-      if(jobObject.Spots <=  0){
-        console.log(`no spots remaining`)
-      } 
-      
-    }
-    const submitButtonfrfr = document.getElementById('submit-hell-please-kill-me');
-    submitButtonfrfr.addEventListener('click', subtractSpotByJobTitle('Software Engineer'))
-
-    submitButtonfrfr.addEventListener('click', subtractSpotByJobTitle('Hardware Innovation Specialist'))
-  // const confirmSubmitButton = document.getElementById('confirm-submit')
-
-
-  // subtractSpotByJobTitle("Software Engineer")
-
-  
-    console.log(sheetObjects)
-  }
 
 
   function csvToObjects(csv){
@@ -702,7 +657,7 @@ function confirmSubmit() {
   applicationDone.style.display = "block";
 
 }
-
+//format of the application
 function phoneFormat(input) {
   input = input.replace(/\D/g, "").substring(0, 10); //Strip everything but 1st 10 digits
   let size = input.length;
@@ -779,6 +734,7 @@ if (document.body.contains(applicationInfo)) {
     (value) => value.id == localStorage.getItem("targetJob")
   );
   applicationName.innerHTML = `${filteredJob[0].jobTitle}`;
+  // console.log(filteredJob)
 
   // if the user has already applied to the target job it will show their info and not let them apply again
   if (
@@ -852,6 +808,120 @@ if (document.body.contains(applicationInfo)) {
     }
   }
 }
+
+
+
+//spreasheet data
+const sheetId = "1vXJXcvjfApen2yUimwW1ioIB0VCxCtlaEHk7J_LCTq0";
+const sheetName = encodeURIComponent("job spots");
+const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
+
+fetch(sheetURL)
+  .then((response) => response.text())
+  .then((csvText) => handleResponse(csvText));
+
+
+
+  function handleResponse(csvText) {
+    let sheetObjects = csvToObjects(csvText);
+  //   console.log(sheetObjects)
+  // console.log(sheetObjects[0].Spots)
+  // console.log(sheetObjects[1])
+    // sheetObjects is now an Array of Objects
+    // console.log(csvText);
+
+    sheetObjects.forEach((sheetObj) => {
+      let matchingJob = jobList.find((job) => job.jobTitle === sheetObj.JobTitle);
+      if (matchingJob) {
+        matchingJob.spots = sheetObj.Spots; // Add Spots property to the matching job
+      }
+    });
+    console.log('Updated Job List:', jobList);
+    // console.log("Job List after adding Spots:", JSON.stringify(jobList, null, 2));
+
+    console.log(jobList);
+
+    function useSpot(jobTitle) {
+      // Find the job in jobList that matches the given jobTitle
+      let job = jobList.find((job) => job.jobTitle === jobTitle);
+      
+      // If job is found and has spots left
+      if (job && job.spots > 0) {
+        job.spots -= 1;
+        console.log(`One spot used for ${jobTitle}. Remaining spots: ${job.spots}`);
+      } else if (job && job.spots <= 0) {
+        console.log(`No spots left for ${jobTitle}.`);
+      } else {
+        console.log(`Job titled ${jobTitle} not found.`);
+      }
+    };
+
+    if (document.body.contains(applicationInfo)){
+      let storedSpots = Object.values(jobList);
+      let filteredSpot = storedSpots.filter(
+        (value) => value.id == localStorage.getItem("targetJob")
+      );
+      applicationName.innerHTML = `${filteredSpot[0].jobTitle}`
+      useSpot(`${filteredSpot[0].jobTitle}`)
+      console.log(filteredSpot);
+    }
+
+    console.log(sheetObjects)
+    // useSpot("Software Engineer");
+
+    // useSpot("Hardware Innovation Specialist");
+    // useSpot("Technology Solution consultant");
+
+    // if (document.body.contains(applicationInfo)){
+    // let storedSpotArray = Object.values(sheetObjects);
+    // let filteredSpot = storedSpotArray.filter(
+    //   (value) => value.JobTitle == localStorage.getItem("targetJob")
+    // )
+    // }
+  
+    // function subtractSpotByJobTitle(jobTitle) {
+    //   // Find the object with the given jobTitle
+    //   const jobObject = sheetObjects.find(obj => obj.JobTitle === jobTitle);
+    //   if (jobObject) {
+    //     // If the job object is found, subtract one from its Spots property
+    //     jobObject.Spots = parseInt(jobObject.Spots) - 1;
+    //     console.log(`One spot subtracted from ${jobTitle}. Remaining spots: ${jobObject.Spots}`);
+    //   } else {
+    //     console.log(`Job with title '${jobTitle}' not found.`);
+    //   }  
+    //   if(jobObject.Spots <=  0){
+    //     console.log(`no spots remaining`)
+    //   } 
+      
+    // }
+    // let jobName;
+  
+
+    // let targetJob = Object.values(sheetObjects);
+    // let filteredObject = targetJob.filter(
+    //   (value) => value.JobTitle == localStorage.getItem("jobName")
+    // );
+    // spo
+
+    
+  //   let storedJobsArray = Object.values(jobList);
+  // let filteredJob = storedJobsArray.filter(
+  //   (value) => value.id == localStorage.getItem("targetJob"),
+  //   // subtractSpotByJobTitle('targetJob')
+  // );
+
+    // const submitButtonfrfr = document.getElementById('submit-hell-please-kill-me');
+    // submitButtonfrfr.addEventListener('click', subtractSpotByJobTitle('Software Engineer'))
+
+    // submitButtonfrfr.addEventListener('click', subtractSpotByJobTitle('Hardware Innovation Specialist'))
+  // const confirmSubmitButton = document.getElementById('confirm-submit')
+
+
+ 
+
+  
+    // console.log(sheetObjects)
+  }
 
 // *****************************************************************************************************************************************************************************************
 //this code checks to see which jobs have been applied to
